@@ -223,28 +223,22 @@
       "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
     },
     {
-      "bytes": 449,
+      "bytes": 996,
       "path": "README.md",
       "rows": null,
-      "sha256": "70f6745dc1bfc3a39c5f4c8ed42fed10734985b5d6c4bce1699e9823f866474d"
+      "sha256": "61902f5d2f90ec4ad753c5b0517b47a48477241052e1ac322985307b4c18868a"
     },
     {
-      "bytes": 16279,
+      "bytes": 22141,
       "path": "assets/app.js",
       "rows": null,
-      "sha256": "5f9032108fa2a53d219b665bb9756329576b1d0a03eb36344d32515ae88bb4a9"
+      "sha256": "db2a51859fb7882dd123fe32e36c7a67fe8a0b2205c5214bf14e8fadda174a03"
     },
     {
-      "bytes": 2023,
-      "path": "assets/methodology.js",
-      "rows": null,
-      "sha256": "65c0a320297c12df46cfcb3c4bfdfdff72c4c27d9a82ae1edbef6be1b8c19354"
-    },
-    {
-      "bytes": 8916,
+      "bytes": 6014,
       "path": "assets/styles.css",
       "rows": null,
-      "sha256": "a0cfcf7c68da8cc963e2e1100a34a6d0a87988cef750da6fbdf5c4420690b09b"
+      "sha256": "992f573449157430ad8e62723a0191e277f326c38eb778beffa52afa129e76e1"
     },
     {
       "bytes": 2163734,
@@ -325,16 +319,10 @@
       "sha256": "e8cc2e5b29449c7f22dbdcc52c9af7dd4984b4893813aadd535999cccf822fab"
     },
     {
-      "bytes": 5695,
+      "bytes": 3332,
       "path": "index.html",
       "rows": null,
-      "sha256": "7fc026f4a4df2683a5620723989d0c586ace4e85ed16b00d7fcf4e24168bc29d"
-    },
-    {
-      "bytes": 3843,
-      "path": "methodology.html",
-      "rows": null,
-      "sha256": "3f603ec40ed26e5ac6f62493940883f3176da322701d9a2af6bbe34a0795cdb6"
+      "sha256": "abca0843c8197b93d20dafada571dbf02e238c57c7104be2bc45816751956da4"
     },
     {
       "bytes": 23,
@@ -344,7 +332,7 @@
     }
   ],
   "frequency": "daily",
-  "generated_at": "2026-08-14T08:04:14.892221+00:00",
+  "generated_at": "2026-08-14T08:53:12.828173+00:00",
   "methodology": "All available positive daily observations from each listed central-bank series, through the stated cutoff. Missing dates are not filled. Ambiguous or non-positive source rows are excluded and listed in the coverage metadata.",
   "missing_value_rule": "never_forward_fill",
   "observation_count": 27879,

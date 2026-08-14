@@ -1,7 +1,14 @@
 "use strict";
 
 const SVG_NS = "http://www.w3.org/2000/svg";
-const state = { currency: "ZAR", view: "level", range: "1Y", hoverIndex: null };
+const SERIES_STYLE = {
+  ZAR: { color: "#2563a8", dash: "" },
+  EGP: { color: "#c38b1f", dash: "8 4" },
+  NGN: { color: "#d66c2c", dash: "2 3" },
+  GHS: { color: "#6f7c38", dash: "10 3 2 3" },
+  ETB: { color: "#b34f7a", dash: "5 3" },
+};
+const state = { currency: "ALL", view: "indexed", range: "1Y", hoverIndex: null };
 const cache = new Map();
 let manifest;
 let sources = [];
@@ -23,8 +30,6 @@ const formatDate = (iso, short = false) => new Intl.DateTimeFormat("en", {
 const formatRate = (value) => new Intl.NumberFormat("en", {
   maximumFractionDigits: value >= 100 ? 2 : 4,
 }).format(value);
-const pctChange = (current, prior) => prior ? ((current / prior) - 1) * 100 : null;
-const formatChange = (value) => value === null ? "—" : `${value >= 0 ? "+" : ""}${value.toFixed(2)}%`;
 
 function setText(id, value) {
   const element = byId(id);
@@ -33,10 +38,6 @@ function setText(id, value) {
 
 function sourceFor(currency) {
   return sources.find((source) => source.currency_iso3 === currency);
-}
-
-function coverageFor(currency) {
-  return manifest.coverage.find((item) => item.currency_iso3 === currency);
 }
 
 async function rowsFor(currency) {
@@ -50,76 +51,123 @@ async function rowsFor(currency) {
   return rows;
 }
 
-function nearestOnOrBefore(rows, target) {
-  const targetDay = dayNumber(target.toISOString().slice(0, 10));
-  let low = 0;
-  let high = rows.length - 1;
-  let answer = null;
-  while (low <= high) {
-    const middle = Math.floor((low + high) / 2);
-    if (dayNumber(rows[middle].observation_date) <= targetDay) {
-      answer = rows[middle];
-      low = middle + 1;
-    } else {
-      high = middle - 1;
-    }
+function makeText(x, y, body, attributes = {}) {
+  const text = svgElement("text", { x, y, ...attributes });
+  text.textContent = body;
+  return text;
+}
+
+function chartFrame(values, firstDay, lastDay) {
+  const width = 1040;
+  const height = 450;
+  const margin = { top: 24, right: 26, bottom: 56, left: 82 };
+  const innerWidth = width - margin.left - margin.right;
+  const innerHeight = height - margin.top - margin.bottom;
+  const daySpan = Math.max(lastDay - firstDay, 1);
+  let yMin = Math.min(...values);
+  let yMax = Math.max(...values);
+  const rawSpan = yMax - yMin || Math.max(Math.abs(yMax) * 0.02, 1);
+  yMin -= rawSpan * 0.1;
+  yMax += rawSpan * 0.1;
+  return {
+    width,
+    height,
+    margin,
+    innerWidth,
+    innerHeight,
+    firstDay,
+    daySpan,
+    yMin,
+    yMax,
+    x: (day) => margin.left + ((day - firstDay) / daySpan) * innerWidth,
+    y: (value) => margin.top + ((yMax - value) / (yMax - yMin)) * innerHeight,
+  };
+}
+
+function addAxes(svg, frame, dates, indexed) {
+  for (let tick = 0; tick <= 4; tick += 1) {
+    const value = frame.yMin + ((frame.yMax - frame.yMin) * tick) / 4;
+    const yPosition = frame.y(value);
+    svg.append(
+      svgElement("line", {
+        x1: frame.margin.left,
+        y1: yPosition,
+        x2: frame.width - frame.margin.right,
+        y2: yPosition,
+        class: "grid-line",
+      }),
+      makeText(
+        frame.margin.left - 12,
+        yPosition + 4,
+        indexed ? value.toFixed(1) : formatRate(value),
+        { class: "axis-label", "text-anchor": "end" },
+      ),
+    );
   }
-  return answer;
-}
-
-function comparison(rows, months) {
-  const latest = rows.at(-1);
-  const target = utcDate(latest.observation_date);
-  target.setUTCMonth(target.getUTCMonth() - months);
-  const prior = nearestOnOrBefore(rows.slice(0, -1), target);
-  return { prior, change: prior ? pctChange(latest.rate, prior.rate) : null };
-}
-
-function renderTabs() {
-  const tabs = byId("currency-tabs");
-  tabs.replaceChildren();
-  sources.forEach((source) => {
-    const button = document.createElement("button");
-    button.type = "button";
-    button.setAttribute("role", "tab");
-    button.setAttribute("aria-selected", String(source.currency_iso3 === state.currency));
-    const code = document.createElement("strong");
-    code.textContent = source.currency_iso3;
-    const country = document.createElement("span");
-    country.textContent = source.country_name;
-    button.append(code, country);
-    button.addEventListener("click", async () => {
-      state.currency = source.currency_iso3;
-      state.hoverIndex = null;
-      const url = new URL(window.location.href);
-      url.searchParams.set("currency", state.currency);
-      window.history.replaceState({}, "", url);
-      await render();
-    });
-    tabs.append(button);
+  const days = dates.map(dayNumber);
+  [0, 0.25, 0.5, 0.75, 1].forEach((fraction, position) => {
+    const target = frame.firstDay + frame.daySpan * fraction;
+    const index = days.reduce(
+      (best, day, current) => Math.abs(day - target) < Math.abs(days[best] - target) ? current : best,
+      0,
+    );
+    svg.append(makeText(frame.x(days[index]), frame.height - 20, formatDate(dates[index], true), {
+      class: "axis-label",
+      "text-anchor": position === 0 ? "start" : position === 4 ? "end" : "middle",
+    }));
   });
+  if (indexed && frame.yMin <= 100 && frame.yMax >= 100) {
+    svg.append(svgElement("line", {
+      x1: frame.margin.left,
+      y1: frame.y(100),
+      x2: frame.width - frame.margin.right,
+      y2: frame.y(100),
+      class: "baseline",
+    }));
+  }
 }
 
-function renderMetrics(rows, coverage) {
-  const latest = rows.at(-1);
-  const previous = rows.at(-2);
-  const oneMonth = comparison(rows, 1);
-  const oneYear = comparison(rows, 12);
-  const daily = previous ? pctChange(latest.rate, previous.rate) : null;
-  setText("metric-latest", formatRate(latest.rate));
-  setText("metric-latest-date", `Observed ${formatDate(latest.observation_date)}`);
-  setText("metric-daily", formatChange(daily));
-  setText("metric-daily-label", previous ? `Since ${formatDate(previous.observation_date)}` : "No prior observation");
-  setText("metric-monthly", formatChange(oneMonth.change));
-  setText("metric-monthly-label", oneMonth.prior ? `Since ${formatDate(oneMonth.prior.observation_date)}` : "No comparable observation");
-  setText("metric-annual", formatChange(oneYear.change));
-  setText("metric-annual-label", oneYear.prior ? `Since ${formatDate(oneYear.prior.observation_date)}` : "No comparable observation");
-  setText("metric-coverage", `${rows.length.toLocaleString("en")} observations`);
-  setText("metric-coverage-label", `${formatDate(rows[0].observation_date)} to ${formatDate(latest.observation_date)}`);
-  [["metric-daily", daily], ["metric-monthly", oneMonth.change], ["metric-annual", oneYear.change]].forEach(([id, value]) => {
-    byId(id).dataset.direction = value === null ? "neutral" : value > 0 ? "depreciation" : "appreciation";
-  });
-  setText("source-freshness", `${coverage.freshness}; latest observation is ${coverage.latest_age_days} day${coverage.latest_age_days === 1 ? "" : "s"} before cutoff`);
+function segmentsFor(rows) {
+  if (!rows.length) return [];
+  let segment = [rows[0]];
+  const segments = [];
+  for (let index = 1; index < rows.length; index += 1) {
+    if (dayNumber(rows[index].observation_date) - dayNumber(rows[index - 1].observation_date) > 10) {
+      segments.push(segment);
+      segment = [];
+    }
+    segment.push(rows[index]);
+  }
+  segments.push(segment);
+  return segments;
+}
+
+function nearestIndex(days, targetDay) {
+  let low = 0;
+  let high = days.length - 1;
+  while (low < high) {
+    const middle = Math.floor((low + high) / 2);
+    if (days[middle] < targetDay) low = middle + 1;
+    else high = middle;
+  }
+  if (low > 0 && Math.abs(days[low - 1] - targetDay) < Math.abs(days[low] - targetDay)) return low - 1;
+  return low;
+}
+
+function nearestRow(rows, targetDay) {
+  const days = rows.map((row) => dayNumber(row.observation_date));
+  return rows[nearestIndex(days, targetDay)];
+}
+
+function positionTooltip(tooltip, container, clientX, clientY, svgX, svgY, width) {
+  if (clientX !== null) {
+    const box = container.getBoundingClientRect();
+    tooltip.style.left = `${Math.min(Math.max(clientX - box.left + 12, 8), Math.max(box.width - width, 8))}px`;
+    tooltip.style.top = `${Math.max(clientY - box.top - 72, 8)}px`;
+  } else {
+    tooltip.style.left = `${Math.min((svgX / 1040) * container.clientWidth + 12, Math.max(container.clientWidth - width, 8))}px`;
+    tooltip.style.top = `${Math.max((svgY / 450) * container.clientHeight - 70, 8)}px`;
+  }
 }
 
 function rowsInRange(rows) {
@@ -131,76 +179,37 @@ function rowsInRange(rows) {
   return earlier ? [earlier, ...visible] : visible;
 }
 
-function makeText(x, y, body, attributes = {}) {
-  const text = svgElement("text", { x, y, ...attributes });
-  text.textContent = body;
-  return text;
-}
-
-function renderChart(allRows) {
+function renderSingleChart(allRows) {
   const rows = rowsInRange(allRows);
   const days = rows.map((row) => dayNumber(row.observation_date));
   const values = rows.map((row) => state.view === "indexed" ? (row.rate / rows[0].rate) * 100 : row.rate);
-  const width = 1040;
-  const height = 450;
-  const margin = { top: 24, right: 26, bottom: 56, left: 82 };
-  const innerWidth = width - margin.left - margin.right;
-  const innerHeight = height - margin.top - margin.bottom;
-  const firstDay = days[0];
-  const daySpan = Math.max(days.at(-1) - firstDay, 1);
-  let yMin = Math.min(...values);
-  let yMax = Math.max(...values);
-  const rawSpan = yMax - yMin || Math.max(yMax * 0.02, 1);
-  yMin -= rawSpan * 0.1;
-  yMax += rawSpan * 0.1;
-  const x = (day) => margin.left + ((day - firstDay) / daySpan) * innerWidth;
-  const y = (value) => margin.top + ((yMax - value) / (yMax - yMin)) * innerHeight;
+  const frame = chartFrame(values, days[0], days.at(-1));
   const container = byId("chart");
   const tooltip = byId("chart-tooltip");
   container.replaceChildren();
   tooltip.hidden = true;
+  tooltip.classList.remove("combined-tooltip");
 
   const svg = svgElement("svg", {
-    viewBox: `0 0 ${width} ${height}`,
+    viewBox: `0 0 ${frame.width} ${frame.height}`,
     tabindex: "0",
     "aria-label": `${state.currency} daily exchange-rate chart. Use left and right arrow keys for exact observations.`,
   });
-  for (let tick = 0; tick <= 4; tick += 1) {
-    const value = yMin + ((yMax - yMin) * tick) / 4;
-    const yPosition = y(value);
-    svg.append(
-      svgElement("line", { x1: margin.left, y1: yPosition, x2: width - margin.right, y2: yPosition, class: "grid-line" }),
-      makeText(margin.left - 12, yPosition + 4, state.view === "indexed" ? value.toFixed(1) : formatRate(value), { class: "axis-label", "text-anchor": "end" }),
-    );
-  }
-  [0, 0.25, 0.5, 0.75, 1].forEach((fraction, position) => {
-    const target = firstDay + daySpan * fraction;
-    const index = days.reduce((best, day, current) => Math.abs(day - target) < Math.abs(days[best] - target) ? current : best, 0);
-    svg.append(makeText(x(days[index]), height - 20, formatDate(rows[index].observation_date, true), {
-      class: "axis-label",
-      "text-anchor": position === 0 ? "start" : position === 4 ? "end" : "middle",
-    }));
-  });
-  if (state.view === "indexed" && yMin <= 100 && yMax >= 100) {
-    svg.append(svgElement("line", { x1: margin.left, y1: y(100), x2: width - margin.right, y2: y(100), class: "baseline" }));
-  }
-
-  let segment = [0];
-  const segments = [];
-  for (let index = 1; index < rows.length; index += 1) {
-    if (days[index] - days[index - 1] > 10) {
-      segments.push(segment);
-      segment = [];
-    }
-    segment.push(index);
-  }
-  segments.push(segment);
-  segments.forEach((indexes) => {
-    const path = indexes.map((index, offset) => `${offset === 0 ? "M" : "L"} ${x(days[index])} ${y(values[index])}`).join(" ");
+  addAxes(svg, frame, rows.map((row) => row.observation_date), state.view === "indexed");
+  segmentsFor(rows).forEach((segment) => {
+    const path = segment.map((row, offset) => {
+      const value = state.view === "indexed" ? (row.rate / rows[0].rate) * 100 : row.rate;
+      return `${offset === 0 ? "M" : "L"} ${frame.x(dayNumber(row.observation_date))} ${frame.y(value)}`;
+    }).join(" ");
     svg.append(svgElement("path", { d: path, class: "data-line" }));
   });
 
-  const guide = svgElement("line", { y1: margin.top, y2: height - margin.bottom, class: "hover-guide", visibility: "hidden" });
+  const guide = svgElement("line", {
+    y1: frame.margin.top,
+    y2: frame.height - frame.margin.bottom,
+    class: "hover-guide",
+    visibility: "hidden",
+  });
   const point = svgElement("circle", { r: 5, class: "hover-point", visibility: "hidden" });
   svg.append(guide, point);
 
@@ -208,8 +217,8 @@ function renderChart(allRows) {
     const bounded = Math.max(0, Math.min(rows.length - 1, index));
     state.hoverIndex = bounded;
     const row = rows[bounded];
-    const xPosition = x(days[bounded]);
-    const yPosition = y(values[bounded]);
+    const xPosition = frame.x(days[bounded]);
+    const yPosition = frame.y(values[bounded]);
     guide.setAttribute("x1", xPosition);
     guide.setAttribute("x2", xPosition);
     guide.setAttribute("visibility", "visible");
@@ -228,32 +237,14 @@ function renderChart(allRows) {
       tooltip.append(indexLine);
     }
     tooltip.hidden = false;
-    if (clientX !== null) {
-      const box = container.getBoundingClientRect();
-      tooltip.style.left = `${Math.min(Math.max(clientX - box.left + 12, 8), box.width - 210)}px`;
-      tooltip.style.top = `${Math.max(clientY - box.top - 72, 8)}px`;
-    } else {
-      tooltip.style.left = `${Math.min((xPosition / width) * container.clientWidth + 12, container.clientWidth - 210)}px`;
-      tooltip.style.top = `${Math.max((yPosition / height) * container.clientHeight - 70, 8)}px`;
-    }
+    positionTooltip(tooltip, container, clientX, clientY, xPosition, yPosition, 210);
   };
 
-  const nearestIndex = (targetDay) => {
-    let low = 0;
-    let high = days.length - 1;
-    while (low < high) {
-      const middle = Math.floor((low + high) / 2);
-      if (days[middle] < targetDay) low = middle + 1;
-      else high = middle;
-    }
-    if (low > 0 && Math.abs(days[low - 1] - targetDay) < Math.abs(days[low] - targetDay)) return low - 1;
-    return low;
-  };
   svg.addEventListener("pointermove", (event) => {
     const bounds = svg.getBoundingClientRect();
-    const svgX = ((event.clientX - bounds.left) / bounds.width) * width;
-    const targetDay = firstDay + ((svgX - margin.left) / innerWidth) * daySpan;
-    showValue(nearestIndex(targetDay), event.clientX, event.clientY);
+    const svgX = ((event.clientX - bounds.left) / bounds.width) * frame.width;
+    const targetDay = frame.firstDay + ((svgX - frame.margin.left) / frame.innerWidth) * frame.daySpan;
+    showValue(nearestIndex(days, targetDay), event.clientX, event.clientY);
   });
   svg.addEventListener("pointerleave", () => {
     guide.setAttribute("visibility", "hidden");
@@ -265,95 +256,317 @@ function renderChart(allRows) {
     event.preventDefault();
     if (event.key === "Home") state.hoverIndex = 0;
     else if (event.key === "End") state.hoverIndex = rows.length - 1;
-    else state.hoverIndex = Math.max(0, Math.min(rows.length - 1, (state.hoverIndex ?? rows.length - 1) + (event.key === "ArrowRight" ? 1 : -1)));
+    else state.hoverIndex = Math.max(
+      0,
+      Math.min(rows.length - 1, (state.hoverIndex ?? rows.length - 1) + (event.key === "ArrowRight" ? 1 : -1)),
+    );
     showValue(state.hoverIndex);
   });
   container.append(svg);
 }
 
-function renderTable(rows) {
-  const body = byId("recent-data-body");
-  body.replaceChildren();
-  rows.slice(-20).reverse().forEach((row) => {
-    const index = rows.indexOf(row);
-    const previous = rows[index - 1];
-    const tr = document.createElement("tr");
-    const dateCell = document.createElement("td");
-    dateCell.textContent = formatDate(row.observation_date);
-    const rateCell = document.createElement("td");
-    rateCell.className = "numeric";
-    rateCell.textContent = formatRate(row.rate);
-    const changeCell = document.createElement("td");
-    changeCell.className = "numeric";
-    changeCell.textContent = previous ? formatChange(pctChange(row.rate, previous.rate)) : "—";
-    tr.append(dateCell, rateCell, changeCell);
-    body.append(tr);
+async function combinedSeries() {
+  const rowLists = await Promise.all(sources.map((source) => rowsFor(source.currency_iso3)));
+  const dateCounts = new Map();
+  rowLists.forEach((rows) => {
+    rows.forEach((row) => dateCounts.set(row.observation_date, (dateCounts.get(row.observation_date) || 0) + 1));
+  });
+  const commonDates = [...dateCounts.entries()]
+    .filter(([, count]) => count === sources.length)
+    .map(([date]) => date)
+    .sort();
+  if (!commonDates.length) throw new Error("The five source series have no shared observation date.");
+  const commonEndDate = commonDates.at(-1);
+  const horizonDays = state.range === "1M" ? 31 : 366;
+  const threshold = dayNumber(commonEndDate) - horizonDays;
+  const commonBaseDate = commonDates.find((date) => dayNumber(date) >= threshold);
+  if (!commonBaseDate) throw new Error("A shared base date is unavailable for this horizon.");
+
+  const series = sources.map((source, index) => {
+    const rows = rowLists[index];
+    const base = rows.find((row) => row.observation_date === commonBaseDate);
+    return {
+      currency: source.currency_iso3,
+      rows: rows
+        .filter((row) => row.observation_date >= commonBaseDate && row.observation_date <= commonEndDate)
+        .map((row) => ({ ...row, indexValue: (row.rate / base.rate) * 100 })),
+    };
+  });
+  return {
+    series,
+    commonBaseDate,
+    commonEndDate,
+    commonDates: commonDates.filter((date) => date >= commonBaseDate && date <= commonEndDate),
+  };
+}
+
+function renderCombinedLegend() {
+  const legend = byId("chart-legend");
+  legend.replaceChildren();
+  sources.forEach((source) => {
+    const item = document.createElement("span");
+    item.className = "legend-item";
+    const sample = svgElement("svg", { viewBox: "0 0 30 8", "aria-hidden": "true" });
+    const style = SERIES_STYLE[source.currency_iso3];
+    sample.append(svgElement("line", {
+      x1: 1,
+      y1: 4,
+      x2: 29,
+      y2: 4,
+      stroke: style.color,
+      "stroke-width": 3,
+      "stroke-dasharray": style.dash,
+    }));
+    const label = document.createElement("span");
+    label.textContent = source.currency_iso3;
+    item.append(sample, label);
+    legend.append(item);
+  });
+  legend.hidden = false;
+}
+
+async function renderCombinedChart() {
+  const combined = await combinedSeries();
+  const allValues = combined.series.flatMap((item) => item.rows.map((row) => row.indexValue));
+  const frame = chartFrame(allValues, dayNumber(combined.commonBaseDate), dayNumber(combined.commonEndDate));
+  const container = byId("chart");
+  const tooltip = byId("chart-tooltip");
+  container.replaceChildren();
+  tooltip.hidden = true;
+  tooltip.classList.add("combined-tooltip");
+
+  const svg = svgElement("svg", {
+    viewBox: `0 0 ${frame.width} ${frame.height}`,
+    tabindex: "0",
+    "aria-label": "Indexed daily exchange-rate comparison for five currencies. Use left and right arrow keys for shared dates.",
+  });
+  addAxes(svg, frame, combined.commonDates, true);
+  combined.series.forEach((item) => {
+    const style = SERIES_STYLE[item.currency];
+    segmentsFor(item.rows).forEach((segment) => {
+      const path = segment.map((row, index) => (
+        `${index === 0 ? "M" : "L"} ${frame.x(dayNumber(row.observation_date))} ${frame.y(row.indexValue)}`
+      )).join(" ");
+      svg.append(svgElement("path", {
+        d: path,
+        class: "combined-line",
+        stroke: style.color,
+        "stroke-dasharray": style.dash,
+      }));
+    });
+  });
+
+  const guide = svgElement("line", {
+    y1: frame.margin.top,
+    y2: frame.height - frame.margin.bottom,
+    class: "hover-guide",
+    visibility: "hidden",
+  });
+  const points = new Map();
+  combined.series.forEach((item) => {
+    const point = svgElement("circle", {
+      r: 4.5,
+      fill: "#fff",
+      stroke: SERIES_STYLE[item.currency].color,
+      "stroke-width": 3,
+      visibility: "hidden",
+    });
+    points.set(item.currency, point);
+    svg.append(point);
+  });
+  svg.append(guide);
+
+  const showValues = (index, clientX = null, clientY = null) => {
+    const bounded = Math.max(0, Math.min(combined.commonDates.length - 1, index));
+    state.hoverIndex = bounded;
+    const selectedDate = combined.commonDates[bounded];
+    const selectedDay = dayNumber(selectedDate);
+    const xPosition = frame.x(selectedDay);
+    guide.setAttribute("x1", xPosition);
+    guide.setAttribute("x2", xPosition);
+    guide.setAttribute("visibility", "visible");
+    tooltip.replaceChildren();
+    const heading = document.createElement("strong");
+    heading.textContent = formatDate(selectedDate);
+    tooltip.append(heading);
+    let firstY = frame.margin.top;
+    combined.series.forEach((item) => {
+      const row = nearestRow(item.rows, selectedDay);
+      const yPosition = frame.y(row.indexValue);
+      if (item === combined.series[0]) firstY = yPosition;
+      const point = points.get(item.currency);
+      point.setAttribute("cx", frame.x(dayNumber(row.observation_date)));
+      point.setAttribute("cy", yPosition);
+      point.setAttribute("visibility", "visible");
+      const line = document.createElement("span");
+      line.className = "tooltip-series";
+      const code = document.createElement("b");
+      code.textContent = item.currency;
+      code.style.color = SERIES_STYLE[item.currency].color;
+      const value = document.createElement("span");
+      value.textContent = `${row.indexValue.toFixed(2)} · ${formatDate(row.observation_date)}`;
+      line.append(code, value);
+      tooltip.append(line);
+    });
+    tooltip.hidden = false;
+    positionTooltip(tooltip, container, clientX, clientY, xPosition, firstY, 282);
+  };
+
+  const sharedDays = combined.commonDates.map(dayNumber);
+  svg.addEventListener("pointermove", (event) => {
+    const bounds = svg.getBoundingClientRect();
+    const svgX = ((event.clientX - bounds.left) / bounds.width) * frame.width;
+    const targetDay = frame.firstDay + ((svgX - frame.margin.left) / frame.innerWidth) * frame.daySpan;
+    showValues(nearestIndex(sharedDays, targetDay), event.clientX, event.clientY);
+  });
+  svg.addEventListener("pointerleave", () => {
+    guide.setAttribute("visibility", "hidden");
+    points.forEach((point) => point.setAttribute("visibility", "hidden"));
+    tooltip.hidden = true;
+  });
+  svg.addEventListener("keydown", (event) => {
+    if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+    event.preventDefault();
+    if (event.key === "Home") state.hoverIndex = 0;
+    else if (event.key === "End") state.hoverIndex = combined.commonDates.length - 1;
+    else state.hoverIndex = Math.max(
+      0,
+      Math.min(
+        combined.commonDates.length - 1,
+        (state.hoverIndex ?? combined.commonDates.length - 1) + (event.key === "ArrowRight" ? 1 : -1),
+      ),
+    );
+    showValues(state.hoverIndex);
+  });
+  container.append(svg);
+  return combined;
+}
+
+function renderTabs() {
+  const tabs = byId("currency-tabs");
+  tabs.replaceChildren();
+  [{ currency_iso3: "ALL", country_name: "Index 100" }, ...sources].forEach((source) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.setAttribute("role", "tab");
+    button.setAttribute("aria-selected", String(source.currency_iso3 === state.currency));
+    const code = document.createElement("strong");
+    code.textContent = source.currency_iso3 === "ALL" ? "All" : source.currency_iso3;
+    const country = document.createElement("span");
+    country.textContent = source.country_name;
+    button.append(code, country);
+    button.addEventListener("click", async () => {
+      state.currency = source.currency_iso3;
+      state.hoverIndex = null;
+      if (state.currency === "ALL") {
+        state.view = "indexed";
+        if (!["1M", "1Y"].includes(state.range)) state.range = "1Y";
+      } else if (state.view === "indexed") {
+        state.view = "level";
+      }
+      const url = new URL(window.location.href);
+      url.searchParams.set("currency", state.currency);
+      window.history.replaceState({}, "", url);
+      await render();
+    });
+    tabs.append(button);
   });
 }
 
-function renderSource(rows, source, coverage) {
-  setText("source-provider", source.provider);
-  setText("source-definition", source.rate_definition);
-  setText("source-segment", rows.at(-1).market_segment.replaceAll("_", " "));
-  setText("source-coverage", `${source.first_observation} to ${source.latest_observation}; ${Number(source.observations).toLocaleString("en")} observations`);
-  const link = byId("source-link");
-  link.href = source.documentation_url || source.source_url;
-  const issues = coverage.data_quality_issues || {};
-  const conflictCount = (issues.conflicting_dates_excluded || []).length;
-  const nonpositiveCount = (issues.nonpositive_rows_excluded || []).length;
-  const note = byId("source-quality-note");
-  const parts = [];
-  if (conflictCount) parts.push(`${conflictCount} conflicting date${conflictCount === 1 ? "" : "s"} excluded`);
-  if (nonpositiveCount) parts.push(`${nonpositiveCount} non-positive source row${nonpositiveCount === 1 ? "" : "s"} excluded`);
-  note.hidden = parts.length === 0;
-  note.textContent = parts.length ? `${parts.join("; ")}. See the manifest for dates.` : "";
+function syncControls() {
+  const combined = state.currency === "ALL";
+  byId("value-control").hidden = combined;
+  document.querySelectorAll(".extended-range").forEach((button) => { button.hidden = combined; });
+  document.querySelectorAll("[data-view]").forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.view === state.view));
+  });
+  document.querySelectorAll("[data-range]").forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.range === state.range));
+  });
 }
 
 async function render() {
-  const rows = await rowsFor(state.currency);
-  const source = sourceFor(state.currency);
-  const coverage = coverageFor(state.currency);
   document.querySelectorAll("[role='tab']").forEach((tab) => {
-    tab.setAttribute("aria-selected", String(tab.querySelector("strong").textContent === state.currency));
+    const code = tab.querySelector("strong").textContent.toUpperCase();
+    tab.setAttribute("aria-selected", String(code === state.currency));
   });
-  setText("currency-code", state.currency);
-  setText("currency-country", rows[0].country_name);
-  setText("currency-title", `${state.currency} per US dollar`);
-  setText("chart-subtitle", `Daily ${source.rate_definition.toLowerCase()} through ${formatDate(rows.at(-1).observation_date)}.`);
-  const download = byId("currency-download");
-  download.href = `data/${state.currency.toLowerCase()}_daily.csv`;
-  download.download = `${state.currency.toLowerCase()}_daily.csv`;
-  renderMetrics(rows, coverage);
-  renderChart(rows);
-  renderTable(rows);
-  renderSource(rows, source, coverage);
+  syncControls();
+  if (state.currency === "ALL") {
+    const combined = await renderCombinedChart();
+    setText("currency-code", "ALL");
+    setText("currency-country", "5 currencies");
+    setText("currency-title", "Five currencies — Index 100");
+    setText(
+      "chart-subtitle",
+      `Common base ${formatDate(combined.commonBaseDate)} = 100; through ${formatDate(combined.commonEndDate)}.`,
+    );
+    const download = byId("currency-download");
+    download.href = "data/fx_daily.csv";
+    download.download = "fx_daily.csv";
+    renderCombinedLegend();
+    setText(
+      "chart-note",
+      "Each series equals 100 on the shared base date. A rising index means local-currency depreciation. Missing dates remain gaps.",
+    );
+  } else {
+    const rows = await rowsFor(state.currency);
+    const source = sourceFor(state.currency);
+    setText("currency-code", state.currency);
+    setText("currency-country", rows[0].country_name);
+    setText("currency-title", `${state.currency} per US dollar`);
+    setText(
+      "chart-subtitle",
+      `Daily ${source.rate_definition.toLowerCase()} through ${formatDate(rows.at(-1).observation_date)}.`,
+    );
+    const download = byId("currency-download");
+    download.href = `data/${state.currency.toLowerCase()}_daily.csv`;
+    download.download = `${state.currency.toLowerCase()}_daily.csv`;
+    byId("chart-legend").hidden = true;
+    renderSingleChart(rows);
+    setText(
+      "chart-note",
+      state.view === "indexed"
+        ? "The first visible observation equals 100. A rising index means local-currency depreciation. Missing dates remain gaps."
+        : "A rising rate means local-currency depreciation. Missing dates remain gaps; no values are filled or interpolated.",
+    );
+  }
   byId("currency-panel").hidden = false;
 }
 
 function bindControls() {
   document.querySelectorAll("[data-view]").forEach((button) => button.addEventListener("click", async () => {
+    if (state.currency === "ALL") return;
     state.view = button.dataset.view;
-    document.querySelectorAll("[data-view]").forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
+    state.hoverIndex = null;
     await render();
   }));
   document.querySelectorAll("[data-range]").forEach((button) => button.addEventListener("click", async () => {
+    if (state.currency === "ALL" && !["1M", "1Y"].includes(button.dataset.range)) return;
     state.range = button.dataset.range;
     state.hoverIndex = null;
-    document.querySelectorAll("[data-range]").forEach((item) => item.setAttribute("aria-pressed", String(item === button)));
     await render();
   }));
 }
 
 async function initialise() {
   try {
-    const [manifestResponse, sourcesResponse] = await Promise.all([fetch("data/manifest.json"), fetch("data/sources.json")]);
+    const [manifestResponse, sourcesResponse] = await Promise.all([
+      fetch("data/manifest.json"),
+      fetch("data/sources.json"),
+    ]);
     if (!manifestResponse.ok || !sourcesResponse.ok) throw new Error("Data files are unavailable.");
     [manifest, sources] = await Promise.all([manifestResponse.json(), sourcesResponse.json()]);
     const requested = new URL(window.location.href).searchParams.get("currency")?.toUpperCase();
-    if (sources.some((source) => source.currency_iso3 === requested)) state.currency = requested;
+    if (requested === "ALL" || sources.some((source) => source.currency_iso3 === requested)) {
+      state.currency = requested;
+      if (requested !== "ALL") state.view = "level";
+    }
     renderTabs();
     bindControls();
-    setText("data-status", `Updated through ${manifest.as_of_date} · ${manifest.observation_count.toLocaleString("en")} observations · ${manifest.currency_count} currencies`);
+    setText(
+      "data-status",
+      `Updated ${manifest.as_of_date} · ${manifest.observation_count.toLocaleString("en")} observations`,
+    );
     await render();
   } catch (error) {
     setText("data-status", "Data unavailable");
