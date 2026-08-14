@@ -3,125 +3,66 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Methodology, definitions, coverage and official sources for the Africa in Data FX Explorer."
-    />
-    <meta name="theme-color" content="#0d2b33" />
-    <title>Methodology &amp; sources — Africa in Data</title>
+    <meta name="description" content="Definitions, sources and download information for the African exchange-rate dataset." />
+    <title>Sources &amp; methods — African exchange rates</title>
     <link rel="stylesheet" href="assets/styles.css" />
     <script src="assets/methodology.js" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#methodology">Skip to methodology</a>
+    <a class="skip-link" href="#methodology">Skip to methods</a>
     <header class="site-header">
-      <a class="brand" href="./" aria-label="Africa in Data home">
-        <span class="brand-mark" aria-hidden="true">AiD</span>
-        <span>
-          <strong>Africa in Data</strong>
-          <small>African FX Explorer</small>
-        </span>
-      </a>
-      <nav aria-label="Primary navigation">
-        <a href="./">Currency explorer</a>
-        <a class="button button-small" href="data/fx_monthly.csv" download>Download all CSV</a>
-      </nav>
+      <a class="site-title" href="./">African exchange rates</a>
+      <nav aria-label="Main navigation"><a href="./">Charts</a><a class="download-link" href="data/fx_daily.csv" download>Download all data</a></nav>
     </header>
 
     <main id="methodology" class="methodology-page">
-      <section class="methodology-hero">
-        <p class="eyebrow">Methodology &amp; sources</p>
-        <h1>How to read and reuse this dataset.</h1>
-        <p>
-          The public beta favours a narrow, reproducible dataset over broad but ambiguous coverage.
-          Every value carries a currency, date, market segment, definition and official source.
-        </p>
-        <p id="methodology-status" class="data-status" aria-live="polite">Loading data manifest…</p>
-      </section>
+      <header>
+        <h1>Sources &amp; methods</h1>
+        <p>Definitions and limitations for the downloadable daily series.</p>
+        <p id="methodology-status" class="data-status" aria-live="polite">Loading manifest…</p>
+      </header>
 
-      <section class="method-section" aria-labelledby="definition-heading">
-        <h2 id="definition-heading">1. Core definition</h2>
+      <section aria-labelledby="definition-heading">
+        <h2 id="definition-heading">Rate definition</h2>
         <div class="prose-card">
-          <p>
-            Rates are expressed as <strong>local-currency units per US dollar</strong>. Therefore, a
-            higher number means that more local currency is required to buy one dollar—a local-currency
-            depreciation. A lower number indicates appreciation.
-          </p>
-          <p>
-            For each completed calendar month, the dataset selects the last available official
-            observation from the configured national authority. The period end is the calendar
-            month-end; the observation date records the actual publication or trading day used.
-          </p>
+          <p>Rates are local-currency units per US dollar. A higher value means local-currency depreciation; a lower value means appreciation.</p>
+          <p>Each country uses one daily series published by its national monetary authority. The source-specific definitions are listed below. Official series are not necessarily executable closing prices, and their calculation methods differ.</p>
         </div>
       </section>
 
-      <section class="method-section" aria-labelledby="comparison-heading">
-        <h2 id="comparison-heading">2. Comparability and limits</h2>
-        <div class="prose-card callout-card">
-          <p>
-            “Official” does not mean methodologically identical. South Africa is a bank-transaction-
-            weighted reference, Egypt a market weighted average, Nigeria an NFEM volume-weighted
-            average, Ghana an interbank mid, and Ethiopia an indicative weighted average.
-          </p>
+      <section aria-labelledby="treatment-heading">
+        <h2 id="treatment-heading">Data treatment</h2>
+        <div class="prose-card">
           <ul>
-            <li>The common elements are quote orientation, monthly selection rule and source authority.</li>
-            <li>Values are not assumed to be executable market closes.</li>
-            <li>Parallel, cash, offshore and forward rates are not mixed into these series.</li>
-            <li>Missing observations remain missing; no forward fill is used.</li>
-            <li>Source transitions are marked and should be considered when interpreting changes.</li>
+            <li>All available positive observations are included through the stated cutoff.</li>
+            <li>Missing dates remain missing; no forward filling or interpolation is used.</li>
+            <li>Parallel, cash, offshore and forward rates are not combined with the official series.</li>
+            <li>Ambiguous duplicate dates and non-positive source rows are excluded and disclosed in the manifest.</li>
+            <li>Observation date, retrieval timestamp, source identifier and quote convention are retained in each download.</li>
           </ul>
         </div>
       </section>
 
-      <section class="method-section" aria-labelledby="sources-heading">
-        <div class="section-heading">
-          <div>
-            <p class="eyebrow">Primary evidence</p>
-            <h2 id="sources-heading">3. Official sources</h2>
-          </div>
-          <a class="text-link" href="data/sources.csv" download>Download source register →</a>
-        </div>
+      <section aria-labelledby="sources-heading">
+        <h2 id="sources-heading">Official sources</h2>
         <div id="source-list" class="source-list"></div>
       </section>
 
-      <section class="method-section" aria-labelledby="downloads-heading">
-        <h2 id="downloads-heading">4. Files and reuse</h2>
+      <section aria-labelledby="downloads-heading">
+        <h2 id="downloads-heading">Downloads</h2>
         <div class="download-grid">
-          <a class="download-card" href="data/fx_monthly.csv" download>
-            <span>CSV</span><strong>All monthly observations</strong><small>Five currencies</small>
-          </a>
-          <a class="download-card" href="data/sources.csv" download>
-            <span>CSV</span><strong>Source register</strong><small>Definitions and provider links</small>
-          </a>
-          <a class="download-card" href="data/manifest.json">
-            <span>JSON</span><strong>Build manifest</strong><small>Coverage, checksums and method</small>
-          </a>
+          <a class="download-card" href="data/fx_daily.csv" download><span>CSV</span><strong>All daily observations</strong><small>Five currencies</small></a>
+          <a class="download-card" href="data/sources.csv" download><span>CSV</span><strong>Source register</strong><small>Definitions and links</small></a>
+          <a class="download-card" href="data/manifest.json"><span>JSON</span><strong>Manifest</strong><small>Coverage, exclusions and checksums</small></a>
         </div>
-        <div class="prose-card rights-card">
+        <div class="prose-card">
           <h3>Rights and disclaimer</h3>
-          <p id="rights-notice">
-            Source data rights remain with the named providers. Source-specific open-data licences
-            have not been confirmed. Retain attribution and review the provider's terms before
-            redistributing the data.
-          </p>
-          <p>
-            The dataset is an informational research compilation. It is provided without warranty,
-            is not an executable price, and does not constitute investment advice.
-          </p>
+          <p id="rights-notice">Source data rights remain with the named providers. Retain attribution and review provider terms before redistributing the data.</p>
+          <p>This compilation is provided for information only, without warranty. It is not an executable price and does not constitute investment advice.</p>
         </div>
       </section>
     </main>
 
-    <footer>
-      <div>
-        <strong>Africa in Data</strong>
-        <p>Independent research prototype. Not affiliated with or endorsed by the named authorities.</p>
-      </div>
-      <div class="footer-links">
-        <a href="./">Currency explorer</a>
-        <a href="data/manifest.json">Data manifest</a>
-        <a href="data/fx_monthly.csv" download>Download data</a>
-      </div>
-    </footer>
+    <footer><a href="./">Charts</a><a href="data/manifest.json">Data manifest</a><span>Source rights remain with the listed providers.</span></footer>
   </body>
 </html>

@@ -41,7 +41,7 @@ async function initialise() {
       sourcesResponse.json(),
     ]);
     byId("methodology-status").textContent =
-      `Data cutoff ${manifest.data_cutoff} · ${manifest.observation_count} observations · ` +
+      `Updated through ${manifest.as_of_date} · ${manifest.observation_count} observations · ` +
       `${manifest.currency_count} currencies`;
     byId("rights-notice").textContent = manifest.rights_notice;
     const list = byId("source-list");
