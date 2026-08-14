@@ -2,7 +2,8 @@
 
 Daily official US dollar exchange-rate charts and downloadable data for selected African currencies.
 The single public page leads with an indexed comparison of all five currencies, followed by the
-same interactive chart for each currency. There is no separate methodology or manifest page.
+same interactive chart for each currency. Source definitions and the 20 most recent observations
+appear directly below the chart. There is no separate methodology or manifest page.
 
 The site is static and requires no application server or account. The combined tab supports 1-month
 and 1-year horizons. It gives every series a value of 100 on the first shared observation date within

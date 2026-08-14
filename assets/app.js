@@ -30,6 +30,12 @@ const formatDate = (iso, short = false) => new Intl.DateTimeFormat("en", {
 const formatRate = (value) => new Intl.NumberFormat("en", {
   maximumFractionDigits: value >= 100 ? 2 : 4,
 }).format(value);
+const pctChange = (current, prior) => prior ? ((current / prior) - 1) * 100 : null;
+const formatChange = (value) => {
+  if (value === null) return "—";
+  const rounded = Math.abs(value) < 0.005 ? 0 : value;
+  return `${rounded > 0 ? "+" : ""}${rounded.toFixed(2)}%`;
+};
 
 function setText(id, value) {
   const element = byId(id);
@@ -38,6 +44,10 @@ function setText(id, value) {
 
 function sourceFor(currency) {
   return sources.find((source) => source.currency_iso3 === currency);
+}
+
+function coverageFor(currency) {
+  return manifest.coverage.find((item) => item.currency_iso3 === currency);
 }
 
 async function rowsFor(currency) {
@@ -442,6 +452,121 @@ async function renderCombinedChart() {
   return combined;
 }
 
+function renderTableHead(columns) {
+  const head = byId("recent-data-head");
+  head.replaceChildren();
+  const row = document.createElement("tr");
+  columns.forEach((column, index) => {
+    const cell = document.createElement("th");
+    cell.scope = "col";
+    cell.textContent = column;
+    if (index > 0) cell.className = "numeric";
+    row.append(cell);
+  });
+  head.append(row);
+}
+
+function renderSingleDetails(rows, source, coverage) {
+  setText("source-provider", source.provider);
+  setText("source-definition", source.rate_definition);
+  setText("source-segment", rows.at(-1).market_segment.replaceAll("_", " "));
+  setText(
+    "source-coverage",
+    `${formatDate(rows[0].observation_date)} to ${formatDate(rows.at(-1).observation_date)}; ${rows.length.toLocaleString("en")} observations`,
+  );
+  setText(
+    "source-freshness",
+    `${coverage.freshness}; latest observation is ${coverage.latest_age_days} day${coverage.latest_age_days === 1 ? "" : "s"} before cutoff`,
+  );
+
+  const issues = coverage.data_quality_issues || {};
+  const conflictCount = (issues.conflicting_dates_excluded || []).length;
+  const nonpositiveCount = (issues.nonpositive_rows_excluded || []).length;
+  const noteParts = [];
+  if (conflictCount) noteParts.push(`${conflictCount} conflicting date${conflictCount === 1 ? "" : "s"} excluded`);
+  if (nonpositiveCount) noteParts.push(`${nonpositiveCount} non-positive source row${nonpositiveCount === 1 ? "" : "s"} excluded`);
+  const qualityNote = byId("source-quality-note");
+  qualityNote.hidden = noteParts.length === 0;
+  qualityNote.textContent = noteParts.length ? `${noteParts.join("; ")}.` : "";
+
+  byId("official-source-list").hidden = true;
+  const sourceLink = byId("source-link");
+  sourceLink.hidden = false;
+  sourceLink.href = source.documentation_url || source.source_url;
+
+  setText("recent-description", "Most recent 20 source observations.");
+  setText("recent-unit", "LCU per USD");
+  renderTableHead(["Date", "Rate", "Change"]);
+  const body = byId("recent-data-body");
+  body.replaceChildren();
+  rows.slice(-20).reverse().forEach((row) => {
+    const index = rows.indexOf(row);
+    const previous = rows[index - 1];
+    const tableRow = document.createElement("tr");
+    const dateCell = document.createElement("td");
+    dateCell.textContent = formatDate(row.observation_date);
+    const rateCell = document.createElement("td");
+    rateCell.className = "numeric";
+    rateCell.textContent = formatRate(row.rate);
+    const changeCell = document.createElement("td");
+    changeCell.className = "numeric";
+    changeCell.textContent = previous ? formatChange(pctChange(row.rate, previous.rate)) : "—";
+    tableRow.append(dateCell, rateCell, changeCell);
+    body.append(tableRow);
+  });
+}
+
+function renderCombinedDetails(combined) {
+  setText("source-provider", "SARB, CBE, CBN, BoG and NBE");
+  setText("source-definition", "Five source-native official/reference rates, normalized to one shared base date.");
+  setText("source-segment", "Source-specific official/reference market segments");
+  setText(
+    "source-coverage",
+    `${formatDate(combined.commonBaseDate)} to ${formatDate(combined.commonEndDate)}; ${manifest.observation_count.toLocaleString("en")} downloadable observations`,
+  );
+  setText("source-freshness", `Common endpoint: ${formatDate(combined.commonEndDate)}, the latest date reported by all five sources.`);
+  const qualityNote = byId("source-quality-note");
+  qualityNote.hidden = false;
+  qualityNote.textContent = "Source definitions and fixing conventions differ by country. Indexing aligns the base and direction, not the underlying market definition.";
+
+  const sourceLink = byId("source-link");
+  sourceLink.hidden = true;
+  const sourceList = byId("official-source-list");
+  sourceList.replaceChildren();
+  sources.forEach((source) => {
+    const link = document.createElement("a");
+    link.href = source.documentation_url || source.source_url;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.textContent = `${source.currency_iso3}: ${source.provider}`;
+    sourceList.append(link);
+  });
+  sourceList.hidden = false;
+
+  setText("recent-description", "Up to 20 most recent dates observed by all five sources.");
+  setText("recent-unit", "Index (base = 100)");
+  renderTableHead(["Date", ...combined.series.map((item) => item.currency)]);
+  const rowMaps = new Map(combined.series.map((item) => [
+    item.currency,
+    new Map(item.rows.map((row) => [row.observation_date, row.indexValue])),
+  ]));
+  const body = byId("recent-data-body");
+  body.replaceChildren();
+  combined.commonDates.slice(-20).reverse().forEach((date) => {
+    const tableRow = document.createElement("tr");
+    const dateCell = document.createElement("td");
+    dateCell.textContent = formatDate(date);
+    tableRow.append(dateCell);
+    combined.series.forEach((item) => {
+      const valueCell = document.createElement("td");
+      valueCell.className = "numeric";
+      valueCell.textContent = rowMaps.get(item.currency).get(date).toFixed(2);
+      tableRow.append(valueCell);
+    });
+    body.append(tableRow);
+  });
+}
+
 function renderTabs() {
   const tabs = byId("currency-tabs");
   tabs.replaceChildren();
@@ -508,9 +633,11 @@ async function render() {
       "chart-note",
       "Each series equals 100 on the shared base date. A rising index means local-currency depreciation. Missing dates remain gaps.",
     );
+    renderCombinedDetails(combined);
   } else {
     const rows = await rowsFor(state.currency);
     const source = sourceFor(state.currency);
+    const coverage = coverageFor(state.currency);
     setText("currency-code", state.currency);
     setText("currency-country", rows[0].country_name);
     setText("currency-title", `${state.currency} per US dollar`);
@@ -529,6 +656,7 @@ async function render() {
         ? "The first visible observation equals 100. A rising index means local-currency depreciation. Missing dates remain gaps."
         : "A rising rate means local-currency depreciation. Missing dates remain gaps; no values are filled or interpolated.",
     );
+    renderSingleDetails(rows, source, coverage);
   }
   byId("currency-panel").hidden = false;
 }

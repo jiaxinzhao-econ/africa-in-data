@@ -61,6 +61,38 @@
           <div id="chart-tooltip" class="chart-tooltip" role="status" aria-live="polite" hidden></div>
         </div>
         <p id="chart-note" class="chart-note"></p>
+
+        <div class="lower-grid">
+          <section class="source-panel" aria-labelledby="data-info-heading">
+            <h3 id="data-info-heading">Data information</h3>
+            <dl>
+              <div><dt>Provider</dt><dd id="source-provider">—</dd></div>
+              <div><dt>Rate</dt><dd id="source-definition">—</dd></div>
+              <div><dt>Segment</dt><dd id="source-segment">—</dd></div>
+              <div><dt>Coverage</dt><dd id="source-coverage">—</dd></div>
+              <div><dt>Freshness</dt><dd id="source-freshness">—</dd></div>
+            </dl>
+            <p id="source-quality-note" class="quality-note" hidden></p>
+            <div id="official-source-list" class="source-link-list" hidden></div>
+            <a id="source-link" href="#" target="_blank" rel="noopener noreferrer">Open official source</a>
+          </section>
+
+          <section class="table-panel" aria-labelledby="recent-heading">
+            <div class="table-heading">
+              <div>
+                <h3 id="recent-heading">Recent observations</h3>
+                <p id="recent-description">Most recent 20 observations.</p>
+              </div>
+              <span id="recent-unit">LCU per USD</span>
+            </div>
+            <div class="table-scroll">
+              <table>
+                <thead id="recent-data-head"></thead>
+                <tbody id="recent-data-body"></tbody>
+              </table>
+            </div>
+          </section>
+        </div>
       </article>
     </main>
 

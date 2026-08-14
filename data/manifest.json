@@ -223,22 +223,22 @@
       "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
     },
     {
-      "bytes": 996,
+      "bytes": 1084,
       "path": "README.md",
       "rows": null,
-      "sha256": "61902f5d2f90ec4ad753c5b0517b47a48477241052e1ac322985307b4c18868a"
+      "sha256": "0e03672ed7d654d6fad338340a1711025da3a1a7f5c57eadbd0244d2c12364fe"
     },
     {
-      "bytes": 22141,
+      "bytes": 27783,
       "path": "assets/app.js",
       "rows": null,
-      "sha256": "db2a51859fb7882dd123fe32e36c7a67fe8a0b2205c5214bf14e8fadda174a03"
+      "sha256": "4383a6d2e7d2a734365899ea6019b717b21e79110792e9a90271a09e9bff3f90"
     },
     {
-      "bytes": 6014,
+      "bytes": 7610,
       "path": "assets/styles.css",
       "rows": null,
-      "sha256": "992f573449157430ad8e62723a0191e277f326c38eb778beffa52afa129e76e1"
+      "sha256": "7ccfee9626dcebcba599c2e2d1ee2f2a74488828cad3014133e9a20050d32ee1"
     },
     {
       "bytes": 2163734,
@@ -319,10 +319,10 @@
       "sha256": "e8cc2e5b29449c7f22dbdcc52c9af7dd4984b4893813aadd535999cccf822fab"
     },
     {
-      "bytes": 3332,
+      "bytes": 4819,
       "path": "index.html",
       "rows": null,
-      "sha256": "abca0843c8197b93d20dafada571dbf02e238c57c7104be2bc45816751956da4"
+      "sha256": "fa28fa44c80bdefcb78274e9fb3c28403e856d190a91801d0dedcaf6d147b178"
     },
     {
       "bytes": 23,
@@ -332,7 +332,7 @@
     }
   ],
   "frequency": "daily",
-  "generated_at": "2026-08-14T08:53:12.828173+00:00",
+  "generated_at": "2026-08-14T09:12:16.223070+00:00",
   "methodology": "All available positive daily observations from each listed central-bank series, through the stated cutoff. Missing dates are not filled. Ambiguous or non-positive source rows are excluded and listed in the coverage metadata.",
   "missing_value_rule": "never_forward_fill",
   "observation_count": 27879,
