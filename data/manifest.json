@@ -1,0 +1,183 @@
+{
+  "coverage": [
+    {
+      "country_iso3": "ZAF",
+      "currency_iso3": "ZAR",
+      "first_period": "2024-08-31",
+      "interior_missing_months": [],
+      "last_period": "2026-07-31",
+      "leading_months_unavailable": 0,
+      "observations": 24,
+      "source_break_periods": [],
+      "source_id": "SARB_DAILY_FX"
+    },
+    {
+      "country_iso3": "EGY",
+      "currency_iso3": "EGP",
+      "first_period": "2024-08-31",
+      "interior_missing_months": [],
+      "last_period": "2026-07-31",
+      "leading_months_unavailable": 0,
+      "observations": 24,
+      "source_break_periods": [
+        "2024-08-31"
+      ],
+      "source_id": "CBE_DAILY_FX"
+    },
+    {
+      "country_iso3": "NGA",
+      "currency_iso3": "NGN",
+      "first_period": "2024-12-31",
+      "interior_missing_months": [],
+      "last_period": "2026-07-31",
+      "leading_months_unavailable": 4,
+      "observations": 20,
+      "source_break_periods": [
+        "2024-12-31"
+      ],
+      "source_id": "CBN_NFEM_FX"
+    },
+    {
+      "country_iso3": "GHA",
+      "currency_iso3": "GHS",
+      "first_period": "2024-08-31",
+      "interior_missing_months": [],
+      "last_period": "2026-07-31",
+      "leading_months_unavailable": 0,
+      "observations": 24,
+      "source_break_periods": [],
+      "source_id": "BOG_DAILY_FX"
+    },
+    {
+      "country_iso3": "ETH",
+      "currency_iso3": "ETB",
+      "first_period": "2024-09-30",
+      "interior_missing_months": [],
+      "last_period": "2026-07-31",
+      "leading_months_unavailable": 1,
+      "observations": 23,
+      "source_break_periods": [
+        "2024-09-30"
+      ],
+      "source_id": "NBE_DAILY_FX"
+    }
+  ],
+  "currency_count": 5,
+  "data_cutoff": "2026-07-31",
+  "files": [
+    {
+      "bytes": 1,
+      "path": ".nojekyll",
+      "rows": null,
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "bytes": 556,
+      "path": "README.md",
+      "rows": null,
+      "sha256": "b2485b8cd6f5dc4f36f95eefda8f7f088548ce0b1c9fda311d3fe1971b60183f"
+    },
+    {
+      "bytes": 16831,
+      "path": "assets/app.js",
+      "rows": null,
+      "sha256": "ab1afed0fea48b4939ab99de1e6b5ec35d0c5921dba89c57162120fe0b6f5269"
+    },
+    {
+      "bytes": 2020,
+      "path": "assets/methodology.js",
+      "rows": null,
+      "sha256": "240290b4506ef1e2ddeb08ad49d987151fe5e0e69bd646f2134ffc53307d5c32"
+    },
+    {
+      "bytes": 15869,
+      "path": "assets/styles.css",
+      "rows": null,
+      "sha256": "eb37c554222d6944849e00d626c4aa6ce723d92422f7c32ae909857d353dd749"
+    },
+    {
+      "bytes": 9258,
+      "path": "data/egp_monthly.csv",
+      "rows": 24,
+      "sha256": "2bada8c9fdcb13f4f779c703626990851c3cc6b0b09e7bdaf3e122ce6ee703f8"
+    },
+    {
+      "bytes": 8030,
+      "path": "data/etb_monthly.csv",
+      "rows": 23,
+      "sha256": "803173d19cbc1e24b4a8cd812814f98e4a2cd175b51008e06c372403d008a78a"
+    },
+    {
+      "bytes": 41638,
+      "path": "data/fx_monthly.csv",
+      "rows": 115,
+      "sha256": "af91a627d55fdd7690e3a1d35362180dde4ded69ea8441f30706d1568d7b2eee"
+    },
+    {
+      "bytes": 88093,
+      "path": "data/fx_monthly.json",
+      "rows": 115,
+      "sha256": "8f1f0c3dd23ab80c0031ba819249490cfab2cc5c88a1eec97b83e23df339c87f"
+    },
+    {
+      "bytes": 7868,
+      "path": "data/ghs_monthly.csv",
+      "rows": 24,
+      "sha256": "6483e748f0fc363755a0ace308d191d9a8040fdf1a368e3fef7ea46d63f3c2a9"
+    },
+    {
+      "bytes": 6710,
+      "path": "data/ngn_monthly.csv",
+      "rows": 20,
+      "sha256": "f9d791ee1bb632a1f8cd35d1d000598d139f103f194e6753b66fdce9777abac7"
+    },
+    {
+      "bytes": 2199,
+      "path": "data/sources.csv",
+      "rows": 5,
+      "sha256": "e2fad552c0d5cf710cbaa31c40453c2004e876d0c35f12188f6b1cf099b9d131"
+    },
+    {
+      "bytes": 3396,
+      "path": "data/sources.json",
+      "rows": 5,
+      "sha256": "6cf2eb1c1384e31774c5a83ddaa7a90c8e8db3bd7b7c33323d72bf0ac3e54b32"
+    },
+    {
+      "bytes": 10724,
+      "path": "data/zar_monthly.csv",
+      "rows": 24,
+      "sha256": "945f7198ccf9c1255a9a309ebc4fe4e15b36adfc6ab597f06cf58044f159bdac"
+    },
+    {
+      "bytes": 9185,
+      "path": "index.html",
+      "rows": null,
+      "sha256": "13ada056973e08a86c24d2554420e52ea1c79c880c027972f5f345f7e6b16aee"
+    },
+    {
+      "bytes": 5755,
+      "path": "methodology.html",
+      "rows": null,
+      "sha256": "c0c807eaa040781273004c886f9c29918d505edad9f4d6741a8cb73d7b61eaef"
+    },
+    {
+      "bytes": 23,
+      "path": "robots.txt",
+      "rows": null,
+      "sha256": "16ceb5ee3e0dc13aa9adf31a3ebbe45a1d965b8c2b9f72eaf84e5911e140ed95"
+    }
+  ],
+  "generated_at": "2026-08-14T06:36:45.099980+00:00",
+  "methodology": "Last available source-pure national official observation in each completed calendar month. IMF fallback rows are excluded from this public beta; missing values are not carried forward.",
+  "missing_value_rule": "never_forward_fill",
+  "month_end_rule": "last_available_business_day",
+  "observation_count": 115,
+  "quote_convention": "LCU_per_USD",
+  "quote_currency": "USD",
+  "reporting_month": "2026-07",
+  "rights_notice": "Source data rights remain with the named providers. Source-specific open-data licences have not been confirmed; users should retain attribution and review provider terms before redistribution.",
+  "schema_version": 1,
+  "site_id": "africa-in-data-fx",
+  "site_status": "public_beta"
+}

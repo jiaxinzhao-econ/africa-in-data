@@ -1,0 +1,67 @@
+[
+  {
+    "country_iso3": "ZAF",
+    "currency_iso3": "ZAR",
+    "documentation_url": "https://www.resbank.co.za/en/home/what-we-do/statistics/key-statistics/selected-historical-rates",
+    "open_license_confirmed": "false",
+    "provider": "South African Reserve Bank",
+    "publication_status": "approved_for_attributed_public_beta",
+    "rate_definition": "Weighted average of banks' daily rates at approximately 10:30 a.m.",
+    "rights_note": "Source-specific open-data licence not confirmed; retain attribution and provider link.",
+    "source_id": "SARB_DAILY_FX",
+    "source_url": "https://custom.resbank.co.za/SarbWebApi/WebIndicators/Shared/GetTimeseriesObservations/EXCX135D",
+    "title": "Selected Historical Rates - Rand per US Dollar"
+  },
+  {
+    "country_iso3": "EGY",
+    "currency_iso3": "EGP",
+    "documentation_url": "https://www.cbe.org.eg/en/markets/foreign-exchange/foreign-exchange-historical-data",
+    "open_license_confirmed": "false",
+    "provider": "Central Bank of Egypt",
+    "publication_status": "approved_for_attributed_public_beta",
+    "rate_definition": "Official market weighted-average exchange rate.",
+    "rights_note": "Source-specific open-data licence not confirmed; retain attribution and provider link.",
+    "source_id": "CBE_DAILY_FX",
+    "source_url": "https://www.cbe.org.eg/en/markets/foreign-exchange/foreign-exchange-historical-data",
+    "title": "Market Exchange Rates Historical Data"
+  },
+  {
+    "country_iso3": "NGA",
+    "currency_iso3": "NGN",
+    "documentation_url": "https://www.cbn.gov.ng/rates/ExchRateByCurrency.html",
+    "open_license_confirmed": "false",
+    "provider": "Central Bank of Nigeria",
+    "publication_status": "approved_for_attributed_public_beta",
+    "rate_definition": "Nigerian Foreign Exchange Market volume-weighted average official rate.",
+    "rights_note": "Source-specific open-data licence not confirmed; retain attribution and provider link.",
+    "source_id": "CBN_NFEM_FX",
+    "source_url": "https://www.cbn.gov.ng/api/GetAllNFEM_Rates",
+    "title": "Nigerian Foreign Exchange Market Rates"
+  },
+  {
+    "country_iso3": "GHA",
+    "currency_iso3": "GHS",
+    "documentation_url": "https://www.bog.gov.gh/treasury-and-the-markets/daily-interbank-fx-rates/",
+    "open_license_confirmed": "false",
+    "provider": "Bank of Ghana",
+    "publication_status": "approved_for_attributed_public_beta",
+    "rate_definition": "Official interbank mid rate.",
+    "rights_note": "Source-specific open-data licence not confirmed; retain attribution and provider link.",
+    "source_id": "BOG_DAILY_FX",
+    "source_url": "https://www.bog.gov.gh/treasury-and-the-markets/historical-interbank-fx-rates/",
+    "title": "Daily interbank FX rates"
+  },
+  {
+    "country_iso3": "ETH",
+    "currency_iso3": "ETB",
+    "documentation_url": "https://nbe.gov.et/exchange/indicatives-rates/",
+    "open_license_confirmed": "false",
+    "provider": "National Bank of Ethiopia",
+    "publication_status": "approved_for_attributed_public_beta",
+    "rate_definition": "Indicative weighted-average reference rate based on prior-day bank transactions.",
+    "rights_note": "Source-specific open-data licence not confirmed; retain attribution and provider link.",
+    "source_id": "NBE_DAILY_FX",
+    "source_url": "https://api.nbe.gov.et/api/filter-exchange-rates",
+    "title": "Indicative Daily Exchange Rates"
+  }
+]
