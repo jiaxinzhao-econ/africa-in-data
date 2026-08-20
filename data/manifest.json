@@ -1,5 +1,5 @@
 {
-  "as_of_date": "2026-08-19",
+  "as_of_date": "2026-08-20",
   "coverage": [
     {
       "country_iso3": "ZAF",
@@ -15,8 +15,8 @@
       "gaps_over_seven_days": 0,
       "largest_calendar_gap_days": 6,
       "latest_age_days": 1,
-      "latest_observation": "2026-08-18",
-      "observations": 14194,
+      "latest_observation": "2026-08-19",
+      "observations": 14195,
       "requested_history_start": "1900-01-01",
       "source_id": "SARB_DAILY_FX"
     },
@@ -40,8 +40,8 @@
       "gaps_over_seven_days": 6,
       "largest_calendar_gap_days": 10,
       "latest_age_days": 1,
-      "latest_observation": "2026-08-18",
-      "observations": 5289,
+      "latest_observation": "2026-08-19",
+      "observations": 5290,
       "requested_history_start": "1950-01-01",
       "source_id": "CBE_DAILY_FX"
     },
@@ -59,8 +59,8 @@
       "gaps_over_seven_days": 0,
       "largest_calendar_gap_days": 5,
       "latest_age_days": 1,
-      "latest_observation": "2026-08-18",
-      "observations": 422,
+      "latest_observation": "2026-08-19",
+      "observations": 423,
       "requested_history_start": "1900-01-01",
       "source_id": "CBN_NFEM_FX"
     },
@@ -189,8 +189,8 @@
       "gaps_over_seven_days": 3,
       "largest_calendar_gap_days": 51,
       "latest_age_days": 1,
-      "latest_observation": "2026-08-18",
-      "observations": 7510,
+      "latest_observation": "2026-08-19",
+      "observations": 7511,
       "requested_history_start": "1900-01-01",
       "source_id": "BOG_DAILY_FX"
     },
@@ -208,8 +208,8 @@
       "gaps_over_seven_days": 0,
       "largest_calendar_gap_days": 4,
       "latest_age_days": 1,
-      "latest_observation": "2026-08-18",
-      "observations": 478,
+      "latest_observation": "2026-08-19",
+      "observations": 479,
       "requested_history_start": "2024-09-25",
       "source_id": "NBE_DAILY_FX"
     }
@@ -241,82 +241,82 @@
       "sha256": "7ccfee9626dcebcba599c2e2d1ee2f2a74488828cad3014133e9a20050d32ee1"
     },
     {
-      "bytes": 2164963,
+      "bytes": 2165372,
       "path": "data/egp_daily.csv",
-      "rows": 5289,
-      "sha256": "1b9f8c5f93d4a5faeec50ed4df860df91f0df230571f34d18b640a8b9e6524f9"
+      "rows": 5290,
+      "sha256": "f09db47c5b124a7cfca68be649801ed141705b320a9734a08f1f656f13f3586a"
     },
     {
-      "bytes": 816022,
+      "bytes": 816176,
       "path": "data/egp_daily.json",
-      "rows": 5289,
-      "sha256": "f8c43a6e0cd54d53253c34ac5795ac0419b649e2410c18e4291f8e541ef30e94"
+      "rows": 5290,
+      "sha256": "3afc022525e5fb3ce0894cf564a187fd05d84e0ceb2623d755fb343d0b14cf9e"
     },
     {
-      "bytes": 178459,
+      "bytes": 178832,
       "path": "data/etb_daily.csv",
-      "rows": 478,
-      "sha256": "e99c5757e49d30957920a8ebc3add06f8891445c370c33b93ceeecea3c4bac8e"
+      "rows": 479,
+      "sha256": "7f0b858fee1a9cb5fc23d6bca1858e7ee8b9252732fb8f79741bbd70e0b4dd58"
     },
     {
-      "bytes": 77833,
+      "bytes": 77996,
       "path": "data/etb_daily.json",
-      "rows": 478,
-      "sha256": "d31f4e9dcd829e0526dfe7cea62f464be80862441ea2caa34d08072301b29c24"
+      "rows": 479,
+      "sha256": "4cc98438b7108c9e1671abbceaf7db6ce2245d8fdf3e952a30736da9db6c6b74"
     },
     {
-      "bytes": 11821367,
+      "bytes": 11823331,
       "path": "data/fx_daily.csv",
-      "rows": 27893,
-      "sha256": "3041bb42cd1b0b34281c24e739390fab8d68d18aefeb6564a4ded7ce2b3ad96d"
+      "rows": 27898,
+      "sha256": "f7a0598ef3349181df2163f9d8bf7567df1a01b68484152557f417c331f3f5f9"
     },
     {
-      "bytes": 2654225,
+      "bytes": 2654578,
       "path": "data/ghs_daily.csv",
-      "rows": 7510,
-      "sha256": "1a421e76c9e6ab3a1fbb7bfafa93a308df0294a744d66922d1f562cf0ce1e818"
+      "rows": 7511,
+      "sha256": "cd059e536d42dcfb15f71b318bbb9926a3588baed078ea2d4d429998062ec1d3"
     },
     {
-      "bytes": 1121939,
+      "bytes": 1122088,
       "path": "data/ghs_daily.json",
-      "rows": 7510,
-      "sha256": "0f3e72bac4ade54586b0bd78eba158cd1fb109c10cacde0fb089370b07a2e876"
+      "rows": 7511,
+      "sha256": "8af5641326d5998f32bf38fb9852c55d45b24255d08e4b25de62d0257342d735"
     },
     {
-      "bytes": 151202,
+      "bytes": 151560,
       "path": "data/ngn_daily.csv",
-      "rows": 422,
-      "sha256": "03908c6027c40122583bbbf28ff12bb9d0efa7e5d8dae978eb1dc9b8efc2ada1"
+      "rows": 423,
+      "sha256": "78ea19fe2dbd1a0c9eb34b380762dca8ad87c2484c3e076157edaa7029dc7f56"
     },
     {
-      "bytes": 63180,
+      "bytes": 63330,
       "path": "data/ngn_daily.json",
-      "rows": 422,
-      "sha256": "7bbca97015209798745b70f758eb63a2fc00598b0d6093a507795133c0270015"
+      "rows": 423,
+      "sha256": "f153f01c94a66d0ec05ad04cced89451f0c0bfd0ade61312ffb6de242890db3f"
     },
     {
       "bytes": 2275,
       "path": "data/sources.csv",
       "rows": 5,
-      "sha256": "4554f1e82199cd5657a0110e203b5226cc838ff3774a6f6106a3a66b1454de49"
+      "sha256": "01e0ced803648a92781b0a010652b51fa7a7c9bd7eec9bdf412d6fae249a774d"
     },
     {
       "bytes": 3752,
       "path": "data/sources.json",
       "rows": 5,
-      "sha256": "858c59695255e8abce4d133fc0c9fb6f6c040993822de8bdb45f8dc7ea93ea37"
+      "sha256": "6c9fe8d17f3dd4ef5e812a3532484fcd010cc84e6daa9642be9255953584cdad"
     },
     {
-      "bytes": 6673510,
+      "bytes": 6673981,
       "path": "data/zar_daily.csv",
-      "rows": 14194,
-      "sha256": "261da263a7435785399b904169a812bee8cb95d28607349cae5a1b4d4c23be32"
+      "rows": 14195,
+      "sha256": "641a68e797152a067e5339432e836c0099751e9ecf24923dcb3ac1e57bf989c2"
     },
     {
-      "bytes": 2230542,
+      "bytes": 2230700,
       "path": "data/zar_daily.json",
-      "rows": 14194,
-      "sha256": "cc04949164264588eacbd3b0482d0f791c8681ab7d0c5ca55949c5906af82223"
+      "rows": 14195,
+      "sha256": "a035ac55fc36d7689d37288d6690fe760616587f8f2130354e1a2af55df0fa87"
     },
     {
       "bytes": 4819,
@@ -332,10 +332,10 @@
     }
   ],
   "frequency": "daily",
-  "generated_at": "2026-08-19T00:25:16.977249+00:00",
+  "generated_at": "2026-08-20T01:32:39.017577+00:00",
   "methodology": "All available positive daily observations from each listed central-bank series, through the stated cutoff. Missing dates are not filled. Ambiguous or non-positive source rows are excluded and listed in the coverage metadata.",
   "missing_value_rule": "never_forward_fill",
-  "observation_count": 27893,
+  "observation_count": 27898,
   "quote_convention": "LCU_per_USD",
   "quote_currency": "USD",
   "rights_notice": "Source data rights remain with the named providers. Retain attribution and review provider terms before redistributing the data.",
