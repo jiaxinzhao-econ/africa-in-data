@@ -154,12 +154,12 @@
       "country_iso3": "CHN",
       "csv_path": "data/cny_fx.csv",
       "currency_iso3": "CNY",
-      "first_observation": "2024-01-02",
+      "first_observation": "2006-01-04",
       "frequency": "daily",
       "json_path": "data/cny_fx.json",
       "kind": "fx",
       "latest_observation": "2026-08-31",
-      "observations": 646,
+      "observations": 5022,
       "source_documentation_url": "https://www.chinamoney.com.cn/english/bmkcpr/index.html?tab=2",
       "source_id": "CFETS_CNY_PARITY",
       "source_name": "USD/CNY Central Parity Rate - Historical Data",
@@ -925,14 +925,14 @@
         "nonpositive_rows_excluded": []
       },
       "expected_lag_days": 1,
-      "first_observation": "2024-01-02",
+      "first_observation": "2006-01-04",
       "freshness": "current",
-      "gaps_over_seven_days": 5,
+      "gaps_over_seven_days": 43,
       "largest_calendar_gap_days": 11,
       "latest_age_days": 0,
       "latest_observation": "2026-08-31",
-      "observations": 646,
-      "requested_history_start": "2024-01-01",
+      "observations": 5022,
+      "requested_history_start": "2006-01-01",
       "source_id": "CFETS_CNY_PARITY"
     }
   ],
@@ -969,10 +969,10 @@
       "sha256": "d50bca09adc19a1943708921616dec2f0a1a70e2f063080f95f2a4f49cbbc840"
     },
     {
-      "bytes": 20791196,
+      "bytes": 22077201,
       "path": "data/all_series.csv",
-      "rows": 65959,
-      "sha256": "64396fbc735a9f8f8bd5426eaab4c918442fc61c5db31f87e95d07f5618eabe6"
+      "rows": 70335,
+      "sha256": "36777826500b2664c5ac3a8e0bfcc05c7371b84fa27f1f0252ee987f73f4187f"
     },
     {
       "bytes": 120639,
@@ -999,10 +999,10 @@
       "sha256": "2524f69a23feece4f3686dce008152e77ce33ada4b8d692f9889bf0bbb9860c3"
     },
     {
-      "bytes": 384550,
+      "bytes": 1670555,
       "path": "data/chn_all_series.csv",
-      "rows": 1402,
-      "sha256": "a5847a09836c9911187aa2c8cb3f5cf4cd782e327758a93193c3e5937e51c4f7"
+      "rows": 5778,
+      "sha256": "3e4a496020f6457e951f912763f2916786e53b58ef8f42d392630a6fd71e7017"
     },
     {
       "bytes": 100023,
@@ -1017,28 +1017,28 @@
       "sha256": "000814e3445ef305fce5212d8ae46e02a03a0fbcb37ac92959bae0be5a3c7101"
     },
     {
-      "bytes": 244375,
+      "bytes": 1897964,
       "path": "data/cny_daily.csv",
-      "rows": 646,
-      "sha256": "e36239e119900bd72346761048c4bcf861d261c2196fd3359dbd6ada7f3a52f9"
+      "rows": 5022,
+      "sha256": "f429015bb46224ab370f171fec5c05c545e827dd08c7c85f61bbd737d879d873"
     },
     {
-      "bytes": 96841,
+      "bytes": 752702,
       "path": "data/cny_daily.json",
-      "rows": 646,
-      "sha256": "9f2c76a6563ca3b65312b86338ea02de59c65193cd7d8995d5cce3575b83d6c4"
+      "rows": 5022,
+      "sha256": "1559ff9081e8b5d7053fc33914e5f5b29406c7a6b945dae0cf451676c2f36ef5"
     },
     {
-      "bytes": 190044,
+      "bytes": 1476049,
       "path": "data/cny_fx.csv",
-      "rows": 646,
-      "sha256": "49da43104a99f6195df203d83538dae0c3f52f344360c972d9168c3091a6ba83"
+      "rows": 5022,
+      "sha256": "bbb811383ab5794cb8d85527258aaad9de5e1091631dd0e4e9ce98826def6495"
     },
     {
-      "bytes": 32887,
+      "bytes": 255524,
       "path": "data/cny_fx.json",
-      "rows": 646,
-      "sha256": "b8ed1da5773a08ee24608727838d48d18a4b21387c1a3c80e20dcf69d0e193cd"
+      "rows": 5022,
+      "sha256": "40f794b7e690b4254b3ecda1f25612a33449b4b391ddcdfc7ca821c9ea737066"
     },
     {
       "bytes": 116735,
@@ -1173,10 +1173,10 @@
       "sha256": "f9aed5281ea1f5e415bfdda51e759e84ccfd3de38e38ce480cd111de04d0c59f"
     },
     {
-      "bytes": 12080850,
+      "bytes": 13734439,
       "path": "data/fx_daily.csv",
-      "rows": 28578,
-      "sha256": "ead3d0af1b9911bb4200344fe77b11e282b455214ed3b8bd0d63482d1496a408"
+      "rows": 32954,
+      "sha256": "4cb150f7946e939474a98e2b323eee8ff02ad6747a3a55b98b9488168b06fd55"
     },
     {
       "bytes": 2344835,
@@ -1275,16 +1275,16 @@
       "sha256": "d643f1297d6c6106d5b68967d6a1f4dcd018b3e71b4664e9e09d0a85fade4c37"
     },
     {
-      "bytes": 2693,
+      "bytes": 2694,
       "path": "data/sources.csv",
       "rows": 6,
-      "sha256": "fd12d918ba68440237583a4c171ef28a074970399d1bd34ddb307e4ed1a2763f"
+      "sha256": "360d2a18278724fa778a353398c447f574c4fb6ff1703ef74320a31222e59559"
     },
     {
-      "bytes": 4502,
+      "bytes": 4503,
       "path": "data/sources.json",
       "rows": 6,
-      "sha256": "26bcee251888cc69fc2417054217ca60c736aa89c27ccdd20022a37500f16054"
+      "sha256": "fa90bb62d1be67c56f97072f75bb6f030f3025a5b7a6eb420d9a875a8235dcd0"
     },
     {
       "bytes": 4457602,
@@ -1432,10 +1432,10 @@
     }
   ],
   "frequency": "daily",
-  "generated_at": "2026-08-31T14:44:16.787330+00:00",
+  "generated_at": "2026-08-31T15:08:45.933188+00:00",
   "methodology": "All available observations from each allowlisted official or primary series through the stated cutoff. Daily, weekly and monthly frequencies remain distinct. Missing dates are not filled. US inflation is the documented 12-month percentage change derived from the retained BLS CPI level series.",
   "missing_value_rule": "never_forward_fill",
-  "observation_count": 28578,
+  "observation_count": 32954,
   "quote_convention": "LCU_per_USD",
   "quote_currency": "USD",
   "rights_notice": "Source data rights remain with the named providers. Retain attribution and review provider terms before redistributing the data.",
@@ -1463,5 +1463,5 @@
       "tab_id": "agriculture"
     }
   ],
-  "total_series_observation_count": 65959
+  "total_series_observation_count": 70335
 }
