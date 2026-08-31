@@ -1,5 +1,708 @@
 {
+  "africa_currencies": [
+    "ZAR",
+    "EGP",
+    "NGN",
+    "GHS",
+    "ETB"
+  ],
   "as_of_date": "2026-08-31",
+  "charts": [
+    {
+      "available_ranges": [
+        "1M",
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "zar_fx",
+      "country_iso3": "ZAF",
+      "csv_path": "data/zar_fx.csv",
+      "currency_iso3": "ZAR",
+      "first_observation": "1970-01-02",
+      "frequency": "daily",
+      "json_path": "data/zar_fx.json",
+      "kind": "fx",
+      "latest_observation": "2026-08-28",
+      "observations": 14202,
+      "source_documentation_url": "https://www.resbank.co.za/en/home/what-we-do/statistics/key-statistics/selected-historical-rates",
+      "source_id": "SARB_DAILY_FX",
+      "source_name": "Selected Historical Rates - Rand per US Dollar",
+      "source_url": "https://custom.resbank.co.za/SarbWebApi/WebIndicators/Shared/GetTimeseriesObservations/EXCX135D",
+      "supports_index": true,
+      "tab_id": "africa",
+      "title": "ZAR per US dollar",
+      "transformation": "none",
+      "unit": "LCU_per_USD"
+    },
+    {
+      "available_ranges": [
+        "1M",
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "egp_fx",
+      "country_iso3": "EGY",
+      "csv_path": "data/egp_fx.csv",
+      "currency_iso3": "EGP",
+      "first_observation": "2004-12-23",
+      "frequency": "daily",
+      "json_path": "data/egp_fx.json",
+      "kind": "fx",
+      "latest_observation": "2026-08-31",
+      "observations": 5297,
+      "source_documentation_url": "https://www.cbe.org.eg/en/markets/foreign-exchange/foreign-exchange-historical-data",
+      "source_id": "CBE_DAILY_FX",
+      "source_name": "Market Exchange Rates Historical Data",
+      "source_url": "https://www.cbe.org.eg/en/markets/foreign-exchange/foreign-exchange-historical-data",
+      "supports_index": true,
+      "tab_id": "africa",
+      "title": "EGP per US dollar",
+      "transformation": "none",
+      "unit": "LCU_per_USD"
+    },
+    {
+      "available_ranges": [
+        "1M",
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "ngn_fx",
+      "country_iso3": "NGA",
+      "csv_path": "data/ngn_fx.csv",
+      "currency_iso3": "NGN",
+      "first_observation": "2024-12-02",
+      "frequency": "daily",
+      "json_path": "data/ngn_fx.json",
+      "kind": "fx",
+      "latest_observation": "2026-08-28",
+      "observations": 429,
+      "source_documentation_url": "https://www.cbn.gov.ng/rates/ExchRateByCurrency.html",
+      "source_id": "CBN_NFEM_FX",
+      "source_name": "Nigerian Foreign Exchange Market Rates",
+      "source_url": "https://www.cbn.gov.ng/api/GetAllNFEM_Rates",
+      "supports_index": true,
+      "tab_id": "africa",
+      "title": "NGN per US dollar",
+      "transformation": "none",
+      "unit": "LCU_per_USD"
+    },
+    {
+      "available_ranges": [
+        "1M",
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "ghs_fx",
+      "country_iso3": "GHA",
+      "csv_path": "data/ghs_fx.csv",
+      "currency_iso3": "GHS",
+      "first_observation": "1996-01-02",
+      "frequency": "daily",
+      "json_path": "data/ghs_fx.json",
+      "kind": "fx",
+      "latest_observation": "2026-08-28",
+      "observations": 7518,
+      "source_documentation_url": "https://www.bog.gov.gh/treasury-and-the-markets/daily-interbank-fx-rates/",
+      "source_id": "BOG_DAILY_FX",
+      "source_name": "Daily interbank FX rates",
+      "source_url": "https://www.bog.gov.gh/treasury-and-the-markets/historical-interbank-fx-rates/",
+      "supports_index": true,
+      "tab_id": "africa",
+      "title": "GHS per US dollar",
+      "transformation": "none",
+      "unit": "LCU_per_USD"
+    },
+    {
+      "available_ranges": [
+        "1M",
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "etb_fx",
+      "country_iso3": "ETH",
+      "csv_path": "data/etb_fx.csv",
+      "currency_iso3": "ETB",
+      "first_observation": "2024-09-25",
+      "frequency": "daily",
+      "json_path": "data/etb_fx.json",
+      "kind": "fx",
+      "latest_observation": "2026-08-31",
+      "observations": 486,
+      "source_documentation_url": "https://nbe.gov.et/exchange/indicatives-rates/",
+      "source_id": "NBE_DAILY_FX",
+      "source_name": "Indicative Daily Exchange Rates",
+      "source_url": "https://api.nbe.gov.et/api/filter-exchange-rates",
+      "supports_index": true,
+      "tab_id": "africa",
+      "title": "ETB per US dollar",
+      "transformation": "none",
+      "unit": "LCU_per_USD"
+    },
+    {
+      "available_ranges": [
+        "1M",
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "cny_fx",
+      "country_iso3": "CHN",
+      "csv_path": "data/cny_fx.csv",
+      "currency_iso3": "CNY",
+      "first_observation": "2024-01-02",
+      "frequency": "daily",
+      "json_path": "data/cny_fx.json",
+      "kind": "fx",
+      "latest_observation": "2026-08-31",
+      "observations": 646,
+      "source_documentation_url": "https://www.chinamoney.com.cn/english/bmkcpr/index.html?tab=2",
+      "source_id": "CFETS_CNY_PARITY",
+      "source_name": "USD/CNY Central Parity Rate - Historical Data",
+      "source_url": "https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew",
+      "supports_index": true,
+      "tab_id": "china",
+      "title": "CNY per US dollar",
+      "transformation": "none",
+      "unit": "LCU_per_USD"
+    },
+    {
+      "available_ranges": [
+        "1M",
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "us_dollar_index",
+      "country_iso3": "USA",
+      "csv_path": "data/us_dollar_index.csv",
+      "currency_iso3": "",
+      "first_observation": "2006-01-02",
+      "frequency": "daily",
+      "json_path": "data/us_dollar_index.json",
+      "kind": "series",
+      "latest_observation": "2026-08-21",
+      "observations": 5174,
+      "source_documentation_url": "https://fredhelp.stlouisfed.org/fred/graphs/share-my-fred-graph/overview-of-sharing-options/download-data/",
+      "source_id": "FRED_FED",
+      "source_name": "FRED public CSV - Federal Reserve market series",
+      "source_url": "https://fred.stlouisfed.org/",
+      "supports_index": false,
+      "tab_id": "us",
+      "title": "Nominal Advanced Foreign Economies U.S. Dollar Index",
+      "transformation": "none",
+      "unit": "index_2006_100"
+    },
+    {
+      "available_ranges": [
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "us_inflation",
+      "country_iso3": "USA",
+      "csv_path": "data/us_inflation.csv",
+      "currency_iso3": "",
+      "first_observation": "1948-01-01",
+      "frequency": "monthly",
+      "json_path": "data/us_inflation.json",
+      "kind": "series",
+      "latest_observation": "2026-07-01",
+      "observations": 942,
+      "source_documentation_url": "https://www.bls.gov/cpi/",
+      "source_id": "FRED_BLS",
+      "source_name": "Consumer Price Index for All Urban Consumers: All Items in U.S. City Average",
+      "source_url": "https://fred.stlouisfed.org/series/CPIAUCSL",
+      "supports_index": false,
+      "tab_id": "us",
+      "title": "United States inflation",
+      "transformation": "100 * (CPI_t / CPI_t_minus_12_months - 1)",
+      "unit": "percent_yoy"
+    },
+    {
+      "available_ranges": [
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "us_policy_rate",
+      "country_iso3": "USA",
+      "csv_path": "data/us_policy_rate.csv",
+      "currency_iso3": "",
+      "first_observation": "1954-07-31",
+      "frequency": "monthly",
+      "json_path": "data/us_policy_rate.json",
+      "kind": "series",
+      "latest_observation": "2026-07-31",
+      "observations": 865,
+      "source_documentation_url": "https://www.bis.org/statistics/cbpol/cbpol_doc.pdf",
+      "source_id": "BIS_CBPOL",
+      "source_name": "Central bank policy rates",
+      "source_url": "https://stats.bis.org/api/v1/data/WS_CBPOL/",
+      "supports_index": false,
+      "tab_id": "us",
+      "title": "United States policy-rate midpoint",
+      "transformation": "none",
+      "unit": "percent_per_annum"
+    },
+    {
+      "available_ranges": [
+        "1M",
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "us_2y_yield",
+      "country_iso3": "USA",
+      "csv_path": "data/us_2y_yield.csv",
+      "currency_iso3": "",
+      "first_observation": "1976-06-01",
+      "frequency": "daily",
+      "json_path": "data/us_2y_yield.json",
+      "kind": "series",
+      "latest_observation": "2026-08-27",
+      "observations": 12557,
+      "source_documentation_url": "https://fredhelp.stlouisfed.org/fred/graphs/share-my-fred-graph/overview-of-sharing-options/download-data/",
+      "source_id": "FRED_FED",
+      "source_name": "FRED public CSV - Federal Reserve market series",
+      "source_url": "https://fred.stlouisfed.org/",
+      "supports_index": false,
+      "tab_id": "us",
+      "title": "Market Yield on U.S. Treasury Securities at 2-Year Constant Maturity",
+      "transformation": "none",
+      "unit": "percent_per_annum"
+    },
+    {
+      "available_ranges": [
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "financial_conditions_index",
+      "country_iso3": "USA",
+      "csv_path": "data/financial_conditions_index.csv",
+      "currency_iso3": "",
+      "first_observation": "1971-01-08",
+      "frequency": "weekly",
+      "json_path": "data/financial_conditions_index.json",
+      "kind": "series",
+      "latest_observation": "2026-08-21",
+      "observations": 2903,
+      "source_documentation_url": "https://www.chicagofed.org/research/data/nfci/current-data",
+      "source_id": "FRED_CHICAGO_FED",
+      "source_name": "National Financial Conditions Index",
+      "source_url": "https://fred.stlouisfed.org/series/NFCI",
+      "supports_index": false,
+      "tab_id": "us",
+      "title": "Chicago Fed National Financial Conditions Index",
+      "transformation": "none",
+      "unit": "index"
+    },
+    {
+      "available_ranges": [
+        "1M",
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "vix_index",
+      "country_iso3": "USA",
+      "csv_path": "data/vix_index.csv",
+      "currency_iso3": "",
+      "first_observation": "1990-01-02",
+      "frequency": "daily",
+      "json_path": "data/vix_index.json",
+      "kind": "series",
+      "latest_observation": "2026-08-28",
+      "observations": 9262,
+      "source_documentation_url": "https://www.cboe.com/tradable_products/vix/",
+      "source_id": "FRED_CBOE",
+      "source_name": "CBOE Volatility Index",
+      "source_url": "https://fred.stlouisfed.org/series/VIXCLS",
+      "supports_index": false,
+      "tab_id": "us",
+      "title": "CBOE Volatility Index",
+      "transformation": "none",
+      "unit": "index"
+    },
+    {
+      "available_ranges": [
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "china_policy_rate",
+      "country_iso3": "CHN",
+      "csv_path": "data/china_policy_rate.csv",
+      "currency_iso3": "",
+      "first_observation": "1996-01-31",
+      "frequency": "monthly",
+      "json_path": "data/china_policy_rate.json",
+      "kind": "series",
+      "latest_observation": "2026-06-30",
+      "observations": 366,
+      "source_documentation_url": "https://www.bis.org/statistics/cbpol/cbpol_doc.pdf",
+      "source_id": "BIS_CBPOL",
+      "source_name": "Central bank policy rates",
+      "source_url": "https://stats.bis.org/api/v1/data/WS_CBPOL/",
+      "supports_index": false,
+      "tab_id": "china",
+      "title": "China policy-rate proxy",
+      "transformation": "none",
+      "unit": "percent_per_annum"
+    },
+    {
+      "available_ranges": [
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "brent_oil_price",
+      "country_iso3": "",
+      "csv_path": "data/brent_oil_price.csv",
+      "currency_iso3": "",
+      "first_observation": "1992-01-01",
+      "frequency": "monthly",
+      "json_path": "data/brent_oil_price.json",
+      "kind": "series",
+      "latest_observation": "2026-07-01",
+      "observations": 415,
+      "source_documentation_url": "https://data.imf.org/en/datasets/IMF.STA:PCPS",
+      "source_id": "FRED_IMF_PCPS",
+      "source_name": "IMF Primary Commodity Prices System series",
+      "source_url": "https://fred.stlouisfed.org/categories/32217",
+      "supports_index": false,
+      "tab_id": "energy-industrial",
+      "title": "Global price of Brent crude",
+      "transformation": "none",
+      "unit": "USD_per_barrel"
+    },
+    {
+      "available_ranges": [
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "metals_price_index",
+      "country_iso3": "",
+      "csv_path": "data/metals_price_index.csv",
+      "currency_iso3": "",
+      "first_observation": "1992-01-01",
+      "frequency": "monthly",
+      "json_path": "data/metals_price_index.json",
+      "kind": "series",
+      "latest_observation": "2026-07-01",
+      "observations": 415,
+      "source_documentation_url": "https://data.imf.org/en/datasets/IMF.STA:PCPS",
+      "source_id": "FRED_IMF_PCPS",
+      "source_name": "IMF Primary Commodity Prices System series",
+      "source_url": "https://fred.stlouisfed.org/categories/32217",
+      "supports_index": false,
+      "tab_id": "energy-industrial",
+      "title": "Global price index of metals",
+      "transformation": "none",
+      "unit": "index_2016_100"
+    },
+    {
+      "available_ranges": [
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "copper_price",
+      "country_iso3": "",
+      "csv_path": "data/copper_price.csv",
+      "currency_iso3": "",
+      "first_observation": "1992-01-01",
+      "frequency": "monthly",
+      "json_path": "data/copper_price.json",
+      "kind": "series",
+      "latest_observation": "2026-07-01",
+      "observations": 415,
+      "source_documentation_url": "https://data.imf.org/en/datasets/IMF.STA:PCPS",
+      "source_id": "FRED_IMF_PCPS",
+      "source_name": "IMF Primary Commodity Prices System series",
+      "source_url": "https://fred.stlouisfed.org/categories/32217",
+      "supports_index": false,
+      "tab_id": "energy-industrial",
+      "title": "Global price of copper",
+      "transformation": "none",
+      "unit": "USD_per_metric_ton"
+    },
+    {
+      "available_ranges": [
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "cocoa_price",
+      "country_iso3": "",
+      "csv_path": "data/cocoa_price.csv",
+      "currency_iso3": "",
+      "first_observation": "1992-01-01",
+      "frequency": "monthly",
+      "json_path": "data/cocoa_price.json",
+      "kind": "series",
+      "latest_observation": "2026-07-01",
+      "observations": 415,
+      "source_documentation_url": "https://data.imf.org/en/datasets/IMF.STA:PCPS",
+      "source_id": "FRED_IMF_PCPS",
+      "source_name": "IMF Primary Commodity Prices System series",
+      "source_url": "https://fred.stlouisfed.org/categories/32217",
+      "supports_index": false,
+      "tab_id": "agriculture",
+      "title": "Global price of cocoa",
+      "transformation": "none",
+      "unit": "USD_per_metric_ton"
+    },
+    {
+      "available_ranges": [
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "coffee_arabica_price",
+      "country_iso3": "",
+      "csv_path": "data/coffee_arabica_price.csv",
+      "currency_iso3": "",
+      "first_observation": "1992-01-01",
+      "frequency": "monthly",
+      "json_path": "data/coffee_arabica_price.json",
+      "kind": "series",
+      "latest_observation": "2026-07-01",
+      "observations": 415,
+      "source_documentation_url": "https://data.imf.org/en/datasets/IMF.STA:PCPS",
+      "source_id": "FRED_IMF_PCPS",
+      "source_name": "IMF Primary Commodity Prices System series",
+      "source_url": "https://fred.stlouisfed.org/categories/32217",
+      "supports_index": false,
+      "tab_id": "agriculture",
+      "title": "Global price of other mild Arabica coffee",
+      "transformation": "none",
+      "unit": "USD_cents_per_pound"
+    },
+    {
+      "available_ranges": [
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "wheat_price",
+      "country_iso3": "",
+      "csv_path": "data/wheat_price.csv",
+      "currency_iso3": "",
+      "first_observation": "1992-01-01",
+      "frequency": "monthly",
+      "json_path": "data/wheat_price.json",
+      "kind": "series",
+      "latest_observation": "2026-07-01",
+      "observations": 415,
+      "source_documentation_url": "https://data.imf.org/en/datasets/IMF.STA:PCPS",
+      "source_id": "FRED_IMF_PCPS",
+      "source_name": "IMF Primary Commodity Prices System series",
+      "source_url": "https://fred.stlouisfed.org/categories/32217",
+      "supports_index": false,
+      "tab_id": "agriculture",
+      "title": "Global price of wheat",
+      "transformation": "none",
+      "unit": "USD_per_metric_ton"
+    },
+    {
+      "available_ranges": [
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "chn_inflation",
+      "country_iso3": "CHN",
+      "csv_path": "data/chn_inflation.csv",
+      "currency_iso3": "CNY",
+      "first_observation": "1994-01-31",
+      "frequency": "monthly",
+      "json_path": "data/chn_inflation.json",
+      "kind": "series",
+      "latest_observation": "2026-06-30",
+      "observations": 390,
+      "source_documentation_url": "https://data.imf.org/Datasets/CPI",
+      "source_id": "IMF_CPI",
+      "source_name": "Consumer Price Index (CPI)",
+      "source_url": "https://api.imf.org/external/sdmx/3.0/data/dataflow/IMF.STA/CPI/latest/",
+      "supports_index": false,
+      "tab_id": "china",
+      "title": "China inflation",
+      "transformation": "none",
+      "unit": "percent"
+    },
+    {
+      "available_ranges": [
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "zaf_inflation",
+      "country_iso3": "ZAF",
+      "csv_path": "data/zaf_inflation.csv",
+      "currency_iso3": "ZAR",
+      "first_observation": "1958-01-31",
+      "frequency": "monthly",
+      "json_path": "data/zaf_inflation.json",
+      "kind": "series",
+      "latest_observation": "2026-06-30",
+      "observations": 822,
+      "source_documentation_url": "https://data.imf.org/Datasets/CPI",
+      "source_id": "IMF_CPI",
+      "source_name": "Consumer Price Index (CPI)",
+      "source_url": "https://api.imf.org/external/sdmx/3.0/data/dataflow/IMF.STA/CPI/latest/",
+      "supports_index": false,
+      "tab_id": "africa",
+      "title": "South Africa inflation",
+      "transformation": "none",
+      "unit": "percent"
+    },
+    {
+      "available_ranges": [
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "egy_inflation",
+      "country_iso3": "EGY",
+      "csv_path": "data/egy_inflation.csv",
+      "currency_iso3": "EGP",
+      "first_observation": "2011-01-31",
+      "frequency": "monthly",
+      "json_path": "data/egy_inflation.json",
+      "kind": "series",
+      "latest_observation": "2026-07-31",
+      "observations": 187,
+      "source_documentation_url": "https://data.imf.org/Datasets/CPI",
+      "source_id": "IMF_CPI",
+      "source_name": "Consumer Price Index (CPI)",
+      "source_url": "https://api.imf.org/external/sdmx/3.0/data/dataflow/IMF.STA/CPI/latest/",
+      "supports_index": false,
+      "tab_id": "africa",
+      "title": "Egypt inflation",
+      "transformation": "none",
+      "unit": "percent"
+    },
+    {
+      "available_ranges": [
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "nga_inflation",
+      "country_iso3": "NGA",
+      "csv_path": "data/nga_inflation.csv",
+      "currency_iso3": "NGN",
+      "first_observation": "2006-01-31",
+      "frequency": "monthly",
+      "json_path": "data/nga_inflation.json",
+      "kind": "series",
+      "latest_observation": "2026-06-30",
+      "observations": 246,
+      "source_documentation_url": "https://data.imf.org/Datasets/CPI",
+      "source_id": "IMF_CPI",
+      "source_name": "Consumer Price Index (CPI)",
+      "source_url": "https://api.imf.org/external/sdmx/3.0/data/dataflow/IMF.STA/CPI/latest/",
+      "supports_index": false,
+      "tab_id": "africa",
+      "title": "Nigeria inflation",
+      "transformation": "none",
+      "unit": "percent"
+    },
+    {
+      "available_ranges": [
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "gha_inflation",
+      "country_iso3": "GHA",
+      "csv_path": "data/gha_inflation.csv",
+      "currency_iso3": "GHS",
+      "first_observation": "1998-09-30",
+      "frequency": "monthly",
+      "json_path": "data/gha_inflation.json",
+      "kind": "series",
+      "latest_observation": "2026-07-31",
+      "observations": 335,
+      "source_documentation_url": "https://data.imf.org/Datasets/CPI",
+      "source_id": "IMF_CPI",
+      "source_name": "Consumer Price Index (CPI)",
+      "source_url": "https://api.imf.org/external/sdmx/3.0/data/dataflow/IMF.STA/CPI/latest/",
+      "supports_index": false,
+      "tab_id": "africa",
+      "title": "Ghana inflation",
+      "transformation": "none",
+      "unit": "percent"
+    },
+    {
+      "available_ranges": [
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "eth_inflation",
+      "country_iso3": "ETH",
+      "csv_path": "data/eth_inflation.csv",
+      "currency_iso3": "ETB",
+      "first_observation": "2001-12-31",
+      "frequency": "monthly",
+      "json_path": "data/eth_inflation.json",
+      "kind": "series",
+      "latest_observation": "2026-05-31",
+      "observations": 294,
+      "source_documentation_url": "https://data.imf.org/Datasets/CPI",
+      "source_id": "IMF_CPI",
+      "source_name": "Consumer Price Index (CPI)",
+      "source_url": "https://api.imf.org/external/sdmx/3.0/data/dataflow/IMF.STA/CPI/latest/",
+      "supports_index": false,
+      "tab_id": "africa",
+      "title": "Ethiopia inflation",
+      "transformation": "none",
+      "unit": "percent"
+    },
+    {
+      "available_ranges": [
+        "1Y",
+        "5Y",
+        "FULL"
+      ],
+      "chart_id": "zaf_policy_rate",
+      "country_iso3": "ZAF",
+      "csv_path": "data/zaf_policy_rate.csv",
+      "currency_iso3": "ZAR",
+      "first_observation": "1980-12-31",
+      "frequency": "monthly",
+      "json_path": "data/zaf_policy_rate.json",
+      "kind": "series",
+      "latest_observation": "2026-07-31",
+      "observations": 548,
+      "source_documentation_url": "https://www.bis.org/statistics/cbpol/cbpol_doc.pdf",
+      "source_id": "BIS_CBPOL",
+      "source_name": "Central bank policy rates",
+      "source_url": "https://stats.bis.org/api/v1/data/WS_CBPOL/",
+      "supports_index": false,
+      "tab_id": "africa",
+      "title": "South Africa policy rate",
+      "transformation": "none",
+      "unit": "percent_per_annum"
+    }
+  ],
+  "country_downloads": {
+    "CHN": "data/chn_all_series.csv",
+    "EGY": "data/egy_all_series.csv",
+    "ETH": "data/eth_all_series.csv",
+    "GHA": "data/gha_all_series.csv",
+    "NGA": "data/nga_all_series.csv",
+    "USA": "data/usa_all_series.csv",
+    "ZAF": "data/zaf_all_series.csv"
+  },
   "coverage": [
     {
       "country_iso3": "ZAF",
@@ -39,9 +742,9 @@
       "freshness": "current",
       "gaps_over_seven_days": 6,
       "largest_calendar_gap_days": 10,
-      "latest_age_days": 1,
-      "latest_observation": "2026-08-30",
-      "observations": 5296,
+      "latest_age_days": 0,
+      "latest_observation": "2026-08-31",
+      "observations": 5297,
       "requested_history_start": "1950-01-01",
       "source_id": "CBE_DAILY_FX"
     },
@@ -212,9 +915,28 @@
       "observations": 486,
       "requested_history_start": "2024-09-25",
       "source_id": "NBE_DAILY_FX"
+    },
+    {
+      "country_iso3": "CHN",
+      "currency_iso3": "CNY",
+      "data_quality_issues": {
+        "conflicting_dates_excluded": [],
+        "identical_duplicate_dates_collapsed": [],
+        "nonpositive_rows_excluded": []
+      },
+      "expected_lag_days": 1,
+      "first_observation": "2024-01-02",
+      "freshness": "current",
+      "gaps_over_seven_days": 5,
+      "largest_calendar_gap_days": 11,
+      "latest_age_days": 0,
+      "latest_observation": "2026-08-31",
+      "observations": 646,
+      "requested_history_start": "2024-01-01",
+      "source_id": "CFETS_CNY_PARITY"
     }
   ],
-  "currency_count": 5,
+  "currency_count": 6,
   "files": [
     {
       "bytes": 1,
@@ -223,40 +945,184 @@
       "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
     },
     {
-      "bytes": 1084,
+      "bytes": 1131,
       "path": "README.md",
       "rows": null,
-      "sha256": "0e03672ed7d654d6fad338340a1711025da3a1a7f5c57eadbd0244d2c12364fe"
+      "sha256": "aec42390e10e9a4cccf772f686ea94bcd2a238f1c12f1f2021abdaa2d81da8b2"
     },
     {
-      "bytes": 27783,
+      "bytes": 25231,
       "path": "assets/app.js",
       "rows": null,
-      "sha256": "4383a6d2e7d2a734365899ea6019b717b21e79110792e9a90271a09e9bff3f90"
+      "sha256": "3aa817d4c36b967fb89daf763f95127948969f16f3910cfad584c275f10275b6"
     },
     {
-      "bytes": 7610,
+      "bytes": 5908,
       "path": "assets/styles.css",
       "rows": null,
-      "sha256": "7ccfee9626dcebcba599c2e2d1ee2f2a74488828cad3014133e9a20050d32ee1"
+      "sha256": "ad600363a6521ffebd06a63b00ba01c7fd3400d1a59de9c7ca233ddd040d1c21"
     },
     {
-      "bytes": 2167831,
+      "bytes": 11836723,
+      "path": "data/africa_fx_daily.csv",
+      "rows": 27932,
+      "sha256": "d50bca09adc19a1943708921616dec2f0a1a70e2f063080f95f2a4f49cbbc840"
+    },
+    {
+      "bytes": 20791196,
+      "path": "data/all_series.csv",
+      "rows": 65959,
+      "sha256": "64396fbc735a9f8f8bd5426eaab4c918442fc61c5db31f87e95d07f5618eabe6"
+    },
+    {
+      "bytes": 120639,
+      "path": "data/brent_oil_price.csv",
+      "rows": 415,
+      "sha256": "e6c20da992aae19b9acbd47812b57e23c3b2133028237cdfb9210a820aa5c302"
+    },
+    {
+      "bytes": 22935,
+      "path": "data/brent_oil_price.json",
+      "rows": 415,
+      "sha256": "96934903286f1f6d62133b3c1baf60e573d3c35f615c553a2b9d225c4aa776fb"
+    },
+    {
+      "bytes": 94845,
+      "path": "data/china_policy_rate.csv",
+      "rows": 366,
+      "sha256": "f38715a57a528f8d1da2e0391c1444fd08d36f07410a9b2d3b8bbe30c5cb95e4"
+    },
+    {
+      "bytes": 17806,
+      "path": "data/china_policy_rate.json",
+      "rows": 366,
+      "sha256": "2524f69a23feece4f3686dce008152e77ce33ada4b8d692f9889bf0bbb9860c3"
+    },
+    {
+      "bytes": 384550,
+      "path": "data/chn_all_series.csv",
+      "rows": 1402,
+      "sha256": "a5847a09836c9911187aa2c8cb3f5cf4cd782e327758a93193c3e5937e51c4f7"
+    },
+    {
+      "bytes": 100023,
+      "path": "data/chn_inflation.csv",
+      "rows": 390,
+      "sha256": "4462eb619bf5bcd573d47edc83f49152dd2ed0e3c4382b301a417079082caa36"
+    },
+    {
+      "bytes": 21454,
+      "path": "data/chn_inflation.json",
+      "rows": 390,
+      "sha256": "000814e3445ef305fce5212d8ae46e02a03a0fbcb37ac92959bae0be5a3c7101"
+    },
+    {
+      "bytes": 244375,
+      "path": "data/cny_daily.csv",
+      "rows": 646,
+      "sha256": "e36239e119900bd72346761048c4bcf861d261c2196fd3359dbd6ada7f3a52f9"
+    },
+    {
+      "bytes": 96841,
+      "path": "data/cny_daily.json",
+      "rows": 646,
+      "sha256": "9f2c76a6563ca3b65312b86338ea02de59c65193cd7d8995d5cce3575b83d6c4"
+    },
+    {
+      "bytes": 190044,
+      "path": "data/cny_fx.csv",
+      "rows": 646,
+      "sha256": "49da43104a99f6195df203d83538dae0c3f52f344360c972d9168c3091a6ba83"
+    },
+    {
+      "bytes": 32887,
+      "path": "data/cny_fx.json",
+      "rows": 646,
+      "sha256": "b8ed1da5773a08ee24608727838d48d18a4b21387c1a3c80e20dcf69d0e193cd"
+    },
+    {
+      "bytes": 116735,
+      "path": "data/cocoa_price.csv",
+      "rows": 415,
+      "sha256": "598dbda7e1ede22c1b2ac372535fbb7b87a9016ab211e08623f7e1eab683ab8f"
+    },
+    {
+      "bytes": 24011,
+      "path": "data/cocoa_price.json",
+      "rows": 415,
+      "sha256": "9fd7fc906acea88a51be5070bdb7e216a3418ffb67036c273961f8ca072df033"
+    },
+    {
+      "bytes": 128410,
+      "path": "data/coffee_arabica_price.csv",
+      "rows": 415,
+      "sha256": "d17513d8ef4c3ebc92bdb428d1685796eec9d8d388bae2b4806ce509f0d8f7f5"
+    },
+    {
+      "bytes": 23236,
+      "path": "data/coffee_arabica_price.json",
+      "rows": 415,
+      "sha256": "06178c3aa48a73fea4a915a2528ebf103114f35f7bbad08dc8645a2680387d46"
+    },
+    {
+      "bytes": 119636,
+      "path": "data/copper_price.csv",
+      "rows": 415,
+      "sha256": "5c232dfecc0faeaa7780c537fd8b87bec0b915bc0078826bfaa0b5cca3fc9d61"
+    },
+    {
+      "bytes": 23592,
+      "path": "data/copper_price.json",
+      "rows": 415,
+      "sha256": "c772e16c9c10a42bd3b8fda7194863897838854d91a3691fb06d66080e11c669"
+    },
+    {
+      "bytes": 2168241,
       "path": "data/egp_daily.csv",
-      "rows": 5296,
-      "sha256": "ac54e1764c0b22fa40b312eea9e94204f94149317c2deabedeccada9d268d747"
+      "rows": 5297,
+      "sha256": "19281df21e18febcc82bacfce8ac258e2730d36f70c22dc134202bd40bd45b31"
     },
     {
-      "bytes": 817105,
+      "bytes": 817260,
       "path": "data/egp_daily.json",
-      "rows": 5296,
-      "sha256": "d98fee8ecf0f3edbce5db09d50f89038918c95ce8ea75f730d37b20fc8586d32"
+      "rows": 5297,
+      "sha256": "5fe71d53247eb97f6684d413b716304825435c24389bb43bc38d78ff2d725066"
+    },
+    {
+      "bytes": 1739117,
+      "path": "data/egp_fx.csv",
+      "rows": 5297,
+      "sha256": "691a5cf27247391df58ec134d0e90e9e0a5d7a74a8dd04ffc01c692b7aefa2c4"
+    },
+    {
+      "bytes": 271669,
+      "path": "data/egp_fx.json",
+      "rows": 5297,
+      "sha256": "950c55464845c1cec5bd44b7bded14301f2cedf6420e7abc4e48f4a3dd261c09"
+    },
+    {
+      "bytes": 1787259,
+      "path": "data/egy_all_series.csv",
+      "rows": 5484,
+      "sha256": "791c8fc54895cd9f0947501e47c6ff48c3d8ad1109a2e3f8bb45e63bb3fe44c4"
+    },
+    {
+      "bytes": 48323,
+      "path": "data/egy_inflation.csv",
+      "rows": 187,
+      "sha256": "b58b96071721a4a1beaf7fb8a240ad675d1e808ca6f5ab71259d0ce19162a9c8"
+    },
+    {
+      "bytes": 10370,
+      "path": "data/egy_inflation.json",
+      "rows": 187,
+      "sha256": "341f3fe5d84c840a011e855c154bb0383fe47bf2c82856dbe8abf8eaa1069b4d"
     },
     {
       "bytes": 181443,
       "path": "data/etb_daily.csv",
       "rows": 486,
-      "sha256": "e08d0211be162017c1175bf1a11d1188f1419b1f8efe09f7e62d7b24e2da8965"
+      "sha256": "6084223d1b2fa05ed65dccc2e1c49372aacb06ab64cc1d2c4efceee574763721"
     },
     {
       "bytes": 79137,
@@ -265,10 +1131,70 @@
       "sha256": "0c18cb780db33fa90056add203a4cdd7b940c96d75674ffeea8dfea80477f6de"
     },
     {
-      "bytes": 11836313,
+      "bytes": 122570,
+      "path": "data/etb_fx.csv",
+      "rows": 486,
+      "sha256": "d25bf8b34bd03a2763307dbfb0130dc209f480228eb8454b0df3e1815cc16d8e"
+    },
+    {
+      "bytes": 25677,
+      "path": "data/etb_fx.json",
+      "rows": 486,
+      "sha256": "2d69e03eb037d057a5d01dc5624526d7a4386a67f92e9d331db1bad26f1c0531"
+    },
+    {
+      "bytes": 199167,
+      "path": "data/eth_all_series.csv",
+      "rows": 780,
+      "sha256": "e8300f4edd1eb99353f221591064fe30409b166ce0e1ba798a82ced1b2196a58"
+    },
+    {
+      "bytes": 76778,
+      "path": "data/eth_inflation.csv",
+      "rows": 294,
+      "sha256": "009a18106390bf7f4df88714580f0dcf3e08b2ffff1344cf585a4709b027b18b"
+    },
+    {
+      "bytes": 16329,
+      "path": "data/eth_inflation.json",
+      "rows": 294,
+      "sha256": "43f806159b24266b99bf05e50a018fa4b148deb3089e9685446d66bb3c3209d5"
+    },
+    {
+      "bytes": 867049,
+      "path": "data/financial_conditions_index.csv",
+      "rows": 2903,
+      "sha256": "2f9708d4af74cfa30b32199e6f207fa368229a0db2ed75b615718911914a6f2d"
+    },
+    {
+      "bytes": 146926,
+      "path": "data/financial_conditions_index.json",
+      "rows": 2903,
+      "sha256": "f9aed5281ea1f5e415bfdda51e759e84ccfd3de38e38ce480cd111de04d0c59f"
+    },
+    {
+      "bytes": 12080850,
       "path": "data/fx_daily.csv",
-      "rows": 27931,
-      "sha256": "f4d4eef4e806e6398f38928a3d29369f54d6f40bca0ed1d82b1964553492534b"
+      "rows": 28578,
+      "sha256": "ead3d0af1b9911bb4200344fe77b11e282b455214ed3b8bd0d63482d1496a408"
+    },
+    {
+      "bytes": 2344835,
+      "path": "data/gha_all_series.csv",
+      "rows": 7853,
+      "sha256": "dd95ff08b5db4ab726a014a600a6020cb5a3402d1b6fb4126d74b250f2f0d1ab"
+    },
+    {
+      "bytes": 86491,
+      "path": "data/gha_inflation.csv",
+      "rows": 335,
+      "sha256": "9779fdd6d0c391541de65b2e574bee37afc79d59dff08bd36f832fc22009552a"
+    },
+    {
+      "bytes": 18642,
+      "path": "data/gha_inflation.json",
+      "rows": 335,
+      "sha256": "edbac2f763a78adec5c696e34438a45dfefc616c8f576ed283611541274abaf9"
     },
     {
       "bytes": 2657046,
@@ -283,6 +1209,48 @@
       "sha256": "f34ec341f34ddb53b52442f54b7405f789c02c2eb09a25a9d0c3dc0f9fd064ac"
     },
     {
+      "bytes": 2258525,
+      "path": "data/ghs_fx.csv",
+      "rows": 7518,
+      "sha256": "611e252981a6091164cb1c0e6411e82f9b98ad8fc4fe77a1d6781f35c7775075"
+    },
+    {
+      "bytes": 386364,
+      "path": "data/ghs_fx.json",
+      "rows": 7518,
+      "sha256": "00a415b943cd851e7225bdf07902961366e4a7cba6dd2f25bd596db137f96172"
+    },
+    {
+      "bytes": 122790,
+      "path": "data/metals_price_index.csv",
+      "rows": 415,
+      "sha256": "f14f03093e768d027124cdbc287c227c11f1f922a3cce6607500bd0bc39dc2fa"
+    },
+    {
+      "bytes": 23426,
+      "path": "data/metals_price_index.json",
+      "rows": 415,
+      "sha256": "ef3fce19b3be62c4d06646aed27330f57f2eeb4718cfa14734d8527c1c369fc0"
+    },
+    {
+      "bytes": 175462,
+      "path": "data/nga_all_series.csv",
+      "rows": 675,
+      "sha256": "3539179e2b0f473e66905b66f99871b2bd709a18a1ff955de4f08a10ba8001fd"
+    },
+    {
+      "bytes": 64045,
+      "path": "data/nga_inflation.csv",
+      "rows": 246,
+      "sha256": "e3b3c7dcbf1ad6da0e26e16f2c7d8f77a67fba21d4d5476b0892e9d8026776fa"
+    },
+    {
+      "bytes": 13682,
+      "path": "data/nga_inflation.json",
+      "rows": 246,
+      "sha256": "aa42a43e47a3ea8c2fb5912046f8b823217abb7ef1750802aaea4f24506c8160"
+    },
+    {
       "bytes": 153707,
       "path": "data/ngn_daily.csv",
       "rows": 429,
@@ -295,16 +1263,136 @@
       "sha256": "a9705aa28d855e96ccb9c4f63cf30fa31f8f7b104c20e56f653e393fc265ff56"
     },
     {
-      "bytes": 2275,
-      "path": "data/sources.csv",
-      "rows": 5,
-      "sha256": "91bce7b8967d64f7d2c48bc2956befc1a4ef01c718bc01b3ccd2fabb64c76d21"
+      "bytes": 111598,
+      "path": "data/ngn_fx.csv",
+      "rows": 429,
+      "sha256": "744b143b266091ab8d36688fb740e9daa969ce6a426b6427ec6883d63f1063da"
     },
     {
-      "bytes": 3752,
+      "bytes": 23045,
+      "path": "data/ngn_fx.json",
+      "rows": 429,
+      "sha256": "d643f1297d6c6106d5b68967d6a1f4dcd018b3e71b4664e9e09d0a85fade4c37"
+    },
+    {
+      "bytes": 2693,
+      "path": "data/sources.csv",
+      "rows": 6,
+      "sha256": "fd12d918ba68440237583a4c171ef28a074970399d1bd34ddb307e4ed1a2763f"
+    },
+    {
+      "bytes": 4502,
       "path": "data/sources.json",
-      "rows": 5,
-      "sha256": "557b246661f47da4f4e572028ee3dd1e6bd1d3ce2d38b750a3c32dd56b59494c"
+      "rows": 6,
+      "sha256": "26bcee251888cc69fc2417054217ca60c736aa89c27ccdd20022a37500f16054"
+    },
+    {
+      "bytes": 4457602,
+      "path": "data/us_2y_yield.csv",
+      "rows": 12557,
+      "sha256": "96071cf3b9ac961aaf9d150bd9805192753afac42548d01a6496f5ee9a635391"
+    },
+    {
+      "bytes": 614981,
+      "path": "data/us_2y_yield.json",
+      "rows": 12557,
+      "sha256": "d12a36e5436053012ea66560f82bd4ca93a6a3fb849812ba155ff4f8a3ef9664"
+    },
+    {
+      "bytes": 1777298,
+      "path": "data/us_dollar_index.csv",
+      "rows": 5174,
+      "sha256": "dac37bcfc13f45bfb4a962016643b8854256a7d56ea918706c6f8d854dc22805"
+    },
+    {
+      "bytes": 271485,
+      "path": "data/us_dollar_index.json",
+      "rows": 5174,
+      "sha256": "98bb4be4f5ba0a2a5bcddd78db0de70fbc2da505dfec2858a742d6a259096789"
+    },
+    {
+      "bytes": 293993,
+      "path": "data/us_inflation.csv",
+      "rows": 942,
+      "sha256": "0a8834ce96986681005ed1a8b48777fbf92ca60ba812ab5ef9fa6cb1bd5d16ca"
+    },
+    {
+      "bytes": 51720,
+      "path": "data/us_inflation.json",
+      "rows": 942,
+      "sha256": "e9f61df56a05a7549640b83e8639409295de18d6f72130ab01066be2942235a2"
+    },
+    {
+      "bytes": 228321,
+      "path": "data/us_policy_rate.csv",
+      "rows": 865,
+      "sha256": "234eeac20736ed0c7f5b24737c0ef066439766cffbee5d6fc01ff4dbb67e20fa"
+    },
+    {
+      "bytes": 42167,
+      "path": "data/us_policy_rate.json",
+      "rows": 865,
+      "sha256": "fb13a26dfb7cc4835d6e6ffdf70055763cec4fd1b027daa00367698ad84da3a4"
+    },
+    {
+      "bytes": 9660015,
+      "path": "data/usa_all_series.csv",
+      "rows": 31703,
+      "sha256": "35a31bd6f9387d12f804501a02e58e9de45b431f320adc6c6e734bb78b3b07de"
+    },
+    {
+      "bytes": 2036657,
+      "path": "data/vix_index.csv",
+      "rows": 9262,
+      "sha256": "460412212a81f22d10397e9cac3b8475f3d64dbea0798a64f453dc19b60262b2"
+    },
+    {
+      "bytes": 461938,
+      "path": "data/vix_index.json",
+      "rows": 9262,
+      "sha256": "51889de055de5b2c6a5931b2c54ac344328b8939287950b38218cbaf7a36dcdd"
+    },
+    {
+      "bytes": 116216,
+      "path": "data/wheat_price.csv",
+      "rows": 415,
+      "sha256": "89ca6e87fbaa31cbb88646cdeacb280f4137d98cb6a8518ed33ed666a0ff3c28"
+    },
+    {
+      "bytes": 23492,
+      "path": "data/wheat_price.json",
+      "rows": 415,
+      "sha256": "a8b61e141cd835865a00a7ed27652a439947f79d22b26823f4bfa38cda96a5ab"
+    },
+    {
+      "bytes": 5517654,
+      "path": "data/zaf_all_series.csv",
+      "rows": 15572,
+      "sha256": "1bc51c7021aae59c69217b2f066da83ceb101e3cbb2afebfc13c51656f84ccb9"
+    },
+    {
+      "bytes": 217304,
+      "path": "data/zaf_inflation.csv",
+      "rows": 822,
+      "sha256": "da9e3be46200cb9b4d87407f1933a5c3de0bb048aa9a8cfb69518f71df9536e0"
+    },
+    {
+      "bytes": 45327,
+      "path": "data/zaf_inflation.json",
+      "rows": 822,
+      "sha256": "cf3cdc0f27aa9c4eec090e375cc537dc2da5d5550072e1aa8d3652fc8135717e"
+    },
+    {
+      "bytes": 143115,
+      "path": "data/zaf_policy_rate.csv",
+      "rows": 548,
+      "sha256": "7e2c6ae1c5aacde61d941382dd4b3a4443549d36362c15353ccf66611f37f282"
+    },
+    {
+      "bytes": 26212,
+      "path": "data/zaf_policy_rate.json",
+      "rows": 548,
+      "sha256": "f480b8b15a4f7d058a4930f1e914722e52cadac1c4f8d91ba432fa72c168dac5"
     },
     {
       "bytes": 6677278,
@@ -319,10 +1407,22 @@
       "sha256": "b8f1eb03ef3d011ec99d2fcac006cd398e0ca4a92bed51b9a22ba11d6c4fa6aa"
     },
     {
-      "bytes": 4819,
+      "bytes": 5157597,
+      "path": "data/zar_fx.csv",
+      "rows": 14202,
+      "sha256": "f399456aa810e0f34c186abaf50007d5bb1fd1f8a346245b1b9205ff127e07a7"
+    },
+    {
+      "bytes": 726394,
+      "path": "data/zar_fx.json",
+      "rows": 14202,
+      "sha256": "63e68e1826d8446bf6a6b4ddb027696d3c7a0782eb30e755384673d873dae9b3"
+    },
+    {
+      "bytes": 2026,
       "path": "index.html",
       "rows": null,
-      "sha256": "fa28fa44c80bdefcb78274e9fb3c28403e856d190a91801d0dedcaf6d147b178"
+      "sha256": "59355fa888ec121a0a1ec44d242a852e32816cf0882a67cf24f148ad46499809"
     },
     {
       "bytes": 23,
@@ -332,13 +1432,36 @@
     }
   ],
   "frequency": "daily",
-  "generated_at": "2026-08-31T02:51:55.076379+00:00",
-  "methodology": "All available positive daily observations from each listed central-bank series, through the stated cutoff. Missing dates are not filled. Ambiguous or non-positive source rows are excluded and listed in the coverage metadata.",
+  "generated_at": "2026-08-31T14:44:16.787330+00:00",
+  "methodology": "All available observations from each allowlisted official or primary series through the stated cutoff. Daily, weekly and monthly frequencies remain distinct. Missing dates are not filled. US inflation is the documented 12-month percentage change derived from the retained BLS CPI level series.",
   "missing_value_rule": "never_forward_fill",
-  "observation_count": 27931,
+  "observation_count": 28578,
   "quote_convention": "LCU_per_USD",
   "quote_currency": "USD",
   "rights_notice": "Source data rights remain with the named providers. Retain attribution and review provider terms before redistributing the data.",
-  "schema_version": 2,
-  "site_id": "africa-in-data-fx"
+  "schema_version": 3,
+  "site_id": "africa-in-data-fx",
+  "tabs": [
+    {
+      "label": "African currencies",
+      "tab_id": "africa"
+    },
+    {
+      "label": "United States",
+      "tab_id": "us"
+    },
+    {
+      "label": "China",
+      "tab_id": "china"
+    },
+    {
+      "label": "Energy & industrial",
+      "tab_id": "energy-industrial"
+    },
+    {
+      "label": "Agriculture",
+      "tab_id": "agriculture"
+    }
+  ],
+  "total_series_observation_count": 65959
 }

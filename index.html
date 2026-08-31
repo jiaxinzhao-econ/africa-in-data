@@ -3,99 +3,38 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta
-      name="description"
-      content="Interactive daily US dollar exchange-rate charts and downloadable data for selected African currencies."
-    />
+    <meta name="description" content="Official exchange rates, inflation, policy rates, financial conditions and commodity prices." />
     <meta name="theme-color" content="#ffffff" />
-    <title>African exchange rates</title>
+    <title>Global FX and market data</title>
     <link rel="stylesheet" href="assets/styles.css" />
     <script src="assets/app.js" defer></script>
   </head>
   <body>
-    <a class="skip-link" href="#explorer">Skip to exchange-rate chart</a>
+    <a class="skip-link" href="#dashboard">Skip to charts</a>
     <header class="site-header">
-      <a class="site-title" href="./">African exchange rates</a>
-      <a class="download-link" href="data/fx_daily.csv" download>Download all data</a>
+      <a class="site-title" href="./">Global FX and market data</a>
+      <a class="download-link" href="data/all_series.csv" download>Download all data</a>
     </header>
 
-    <main id="explorer" class="page-shell">
+    <main id="dashboard" class="page-shell">
       <section class="intro" aria-labelledby="page-title">
         <div>
-          <h1 id="page-title">Daily USD exchange rates</h1>
-          <p>Official national-authority series. Select a currency or compare all five.</p>
+          <h1 id="page-title">Global FX and market data</h1>
+          <p>Full-history official and primary-source series, without interpolation.</p>
         </div>
-        <p class="orientation"><strong>Quote:</strong> local currency per US dollar. A rising rate or index means local-currency depreciation.</p>
+        <p class="orientation"><strong>Frequency:</strong> daily where available; otherwise weekly or monthly. Downloads always contain full history, independent of the visible chart window.</p>
       </section>
 
       <p id="data-status" class="data-status" aria-live="polite">Loading data…</p>
       <div id="error-panel" class="error-panel" role="alert" hidden></div>
-      <div id="currency-tabs" class="currency-tabs" role="tablist" aria-label="Select currency"></div>
-
-      <article id="currency-panel" class="currency-panel" hidden>
-        <div class="currency-heading">
-          <div>
-            <p class="currency-label"><strong id="currency-code"></strong><span id="currency-country"></span></p>
-            <h2 id="currency-title"></h2>
-            <p id="chart-subtitle" class="chart-subtitle"></p>
-          </div>
-          <a id="currency-download" class="download-link download-button" href="#" download>Download CSV</a>
-        </div>
-
-        <div class="chart-toolbar">
-          <div id="value-control" class="segmented-control" aria-label="Value display">
-            <button type="button" data-view="level" aria-pressed="true">Rate</button>
-            <button type="button" data-view="indexed" aria-pressed="false">Index 100</button>
-          </div>
-          <div class="segmented-control" aria-label="Time range">
-            <button type="button" data-range="1M" aria-pressed="false">1M</button>
-            <button type="button" data-range="1Y" aria-pressed="true">1Y</button>
-            <button class="extended-range" type="button" data-range="5Y" aria-pressed="false">5Y</button>
-            <button class="extended-range" type="button" data-range="FULL" aria-pressed="false">Full</button>
-          </div>
-        </div>
-
-        <div id="chart-legend" class="chart-legend" aria-label="Currency legend" hidden></div>
-        <div class="chart-shell">
-          <div id="chart" class="chart" role="img" aria-labelledby="currency-title chart-subtitle"></div>
-          <div id="chart-tooltip" class="chart-tooltip" role="status" aria-live="polite" hidden></div>
-        </div>
-        <p id="chart-note" class="chart-note"></p>
-
-        <div class="lower-grid">
-          <section class="source-panel" aria-labelledby="data-info-heading">
-            <h3 id="data-info-heading">Data information</h3>
-            <dl>
-              <div><dt>Provider</dt><dd id="source-provider">—</dd></div>
-              <div><dt>Rate</dt><dd id="source-definition">—</dd></div>
-              <div><dt>Segment</dt><dd id="source-segment">—</dd></div>
-              <div><dt>Coverage</dt><dd id="source-coverage">—</dd></div>
-              <div><dt>Freshness</dt><dd id="source-freshness">—</dd></div>
-            </dl>
-            <p id="source-quality-note" class="quality-note" hidden></p>
-            <div id="official-source-list" class="source-link-list" hidden></div>
-            <a id="source-link" href="#" target="_blank" rel="noopener noreferrer">Open official source</a>
-          </section>
-
-          <section class="table-panel" aria-labelledby="recent-heading">
-            <div class="table-heading">
-              <div>
-                <h3 id="recent-heading">Recent observations</h3>
-                <p id="recent-description">Most recent 20 observations.</p>
-              </div>
-              <span id="recent-unit">LCU per USD</span>
-            </div>
-            <div class="table-scroll">
-              <table>
-                <thead id="recent-data-head"></thead>
-                <tbody id="recent-data-body"></tbody>
-              </table>
-            </div>
-          </section>
-        </div>
-      </article>
+      <nav id="main-tabs" class="main-tabs" role="tablist" aria-label="Data category"></nav>
+      <section id="africa-controls" class="africa-controls" hidden>
+        <div id="africa-tabs" class="country-tabs" role="tablist" aria-label="African currency"></div>
+        <a id="country-download" class="download-link download-button" href="#" download>Download country data</a>
+      </section>
+      <section id="chart-grid" class="chart-grid" aria-live="polite"></section>
     </main>
 
-    <footer>Informational data only. Source rights remain with data providers.</footer>
+    <footer>Informational data only. Source rights remain with the named data providers.</footer>
   </body>
 </html>

@@ -22,8 +22,8 @@
     "currency_name": "Egyptian pound",
     "documentation_url": "https://www.cbe.org.eg/en/markets/foreign-exchange/foreign-exchange-historical-data",
     "first_observation": "2004-12-23",
-    "latest_observation": "2026-08-30",
-    "observations": 5296,
+    "latest_observation": "2026-08-31",
+    "observations": 5297,
     "provider": "Central Bank of Egypt",
     "rate_definition": "Official market weighted-average exchange rate.",
     "rights_note": "Source-specific open-data licence not confirmed; retain attribution and provider link.",
@@ -78,5 +78,21 @@
     "source_id": "NBE_DAILY_FX",
     "source_url": "https://api.nbe.gov.et/api/filter-exchange-rates",
     "title": "Indicative Daily Exchange Rates"
+  },
+  {
+    "country_iso3": "CHN",
+    "country_name": "China",
+    "currency_iso3": "CNY",
+    "currency_name": "Renminbi",
+    "documentation_url": "https://www.chinamoney.com.cn/english/bmkcpr/index.html?tab=2",
+    "first_observation": "2024-01-02",
+    "latest_observation": "2026-08-31",
+    "observations": 646,
+    "provider": "China Foreign Exchange Trade System",
+    "rate_definition": "PBC-authorized daily USD/CNY central parity reference rate.",
+    "rights_note": "Source-specific open-data licence not confirmed; retain attribution and provider link.",
+    "source_id": "CFETS_CNY_PARITY",
+    "source_url": "https://www.chinamoney.com.cn/ags/ms/cm-u-bk-ccpr/CcprHisNew",
+    "title": "USD/CNY Central Parity Rate - Historical Data"
   }
 ]
