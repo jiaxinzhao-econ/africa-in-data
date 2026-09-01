@@ -714,7 +714,7 @@
       },
       "expected_lag_days": 1,
       "first_observation": "1970-01-02",
-      "freshness": "lagged",
+      "freshness": "current",
       "gaps_over_seven_days": 0,
       "largest_calendar_gap_days": 6,
       "latest_age_days": 0,
