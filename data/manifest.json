@@ -6,7 +6,7 @@
     "GHS",
     "ETB"
   ],
-  "as_of_date": "2026-08-31",
+  "as_of_date": "2026-09-29",
   "charts": [
     {
       "available_ranges": [
@@ -23,8 +23,8 @@
       "frequency": "daily",
       "json_path": "data/zar_fx.json",
       "kind": "fx",
-      "latest_observation": "2026-08-31",
-      "observations": 14203,
+      "latest_observation": "2026-09-28",
+      "observations": 14222,
       "source_documentation_url": "https://www.resbank.co.za/en/home/what-we-do/statistics/key-statistics/selected-historical-rates",
       "source_id": "SARB_DAILY_FX",
       "source_name": "Selected Historical Rates - Rand per US Dollar",
@@ -50,8 +50,8 @@
       "frequency": "daily",
       "json_path": "data/egp_fx.json",
       "kind": "fx",
-      "latest_observation": "2026-08-31",
-      "observations": 5297,
+      "latest_observation": "2026-09-28",
+      "observations": 5317,
       "source_documentation_url": "https://www.cbe.org.eg/en/markets/foreign-exchange/foreign-exchange-historical-data",
       "source_id": "CBE_DAILY_FX",
       "source_name": "Market Exchange Rates Historical Data",
@@ -77,8 +77,8 @@
       "frequency": "daily",
       "json_path": "data/ngn_fx.json",
       "kind": "fx",
-      "latest_observation": "2026-08-31",
-      "observations": 430,
+      "latest_observation": "2026-09-28",
+      "observations": 450,
       "source_documentation_url": "https://www.cbn.gov.ng/rates/ExchRateByCurrency.html",
       "source_id": "CBN_NFEM_FX",
       "source_name": "Nigerian Foreign Exchange Market Rates",
@@ -104,8 +104,8 @@
       "frequency": "daily",
       "json_path": "data/ghs_fx.json",
       "kind": "fx",
-      "latest_observation": "2026-08-31",
-      "observations": 7519,
+      "latest_observation": "2026-09-28",
+      "observations": 7538,
       "source_documentation_url": "https://www.bog.gov.gh/treasury-and-the-markets/daily-interbank-fx-rates/",
       "source_id": "BOG_DAILY_FX",
       "source_name": "Daily interbank FX rates",
@@ -131,8 +131,8 @@
       "frequency": "daily",
       "json_path": "data/etb_fx.json",
       "kind": "fx",
-      "latest_observation": "2026-08-31",
-      "observations": 486,
+      "latest_observation": "2026-09-29",
+      "observations": 506,
       "source_documentation_url": "https://nbe.gov.et/exchange/indicatives-rates/",
       "source_id": "NBE_DAILY_FX",
       "source_name": "Indicative Daily Exchange Rates",
@@ -158,8 +158,8 @@
       "frequency": "daily",
       "json_path": "data/cny_fx.json",
       "kind": "fx",
-      "latest_observation": "2026-08-31",
-      "observations": 5022,
+      "latest_observation": "2026-09-29",
+      "observations": 5042,
       "source_documentation_url": "https://www.chinamoney.com.cn/english/bmkcpr/index.html?tab=2",
       "source_id": "CFETS_CNY_PARITY",
       "source_name": "USD/CNY Central Parity Rate - Historical Data",
@@ -185,8 +185,8 @@
       "frequency": "daily",
       "json_path": "data/us_dollar_index.json",
       "kind": "series",
-      "latest_observation": "2026-08-28",
-      "observations": 5179,
+      "latest_observation": "2026-09-25",
+      "observations": 5198,
       "source_documentation_url": "https://fredhelp.stlouisfed.org/fred/graphs/share-my-fred-graph/overview-of-sharing-options/download-data/",
       "source_id": "FRED_FED",
       "source_name": "FRED public CSV - Federal Reserve market series",
@@ -211,8 +211,8 @@
       "frequency": "monthly",
       "json_path": "data/us_inflation.json",
       "kind": "series",
-      "latest_observation": "2026-07-01",
-      "observations": 942,
+      "latest_observation": "2026-08-01",
+      "observations": 943,
       "source_documentation_url": "https://www.bls.gov/cpi/",
       "source_id": "FRED_BLS",
       "source_name": "Consumer Price Index for All Urban Consumers: All Items in U.S. City Average",
@@ -237,8 +237,8 @@
       "frequency": "monthly",
       "json_path": "data/us_policy_rate.json",
       "kind": "series",
-      "latest_observation": "2026-07-31",
-      "observations": 865,
+      "latest_observation": "2026-08-31",
+      "observations": 866,
       "source_documentation_url": "https://www.bis.org/statistics/cbpol/cbpol_doc.pdf",
       "source_id": "BIS_CBPOL",
       "source_name": "Central bank policy rates",
@@ -264,8 +264,8 @@
       "frequency": "daily",
       "json_path": "data/us_2y_yield.json",
       "kind": "series",
-      "latest_observation": "2026-08-28",
-      "observations": 12558,
+      "latest_observation": "2026-09-25",
+      "observations": 12577,
       "source_documentation_url": "https://fredhelp.stlouisfed.org/fred/graphs/share-my-fred-graph/overview-of-sharing-options/download-data/",
       "source_id": "FRED_FED",
       "source_name": "FRED public CSV - Federal Reserve market series",
@@ -290,8 +290,8 @@
       "frequency": "weekly",
       "json_path": "data/financial_conditions_index.json",
       "kind": "series",
-      "latest_observation": "2026-08-21",
-      "observations": 2903,
+      "latest_observation": "2026-09-18",
+      "observations": 2907,
       "source_documentation_url": "https://www.chicagofed.org/research/data/nfci/current-data",
       "source_id": "FRED_CHICAGO_FED",
       "source_name": "National Financial Conditions Index",
@@ -317,8 +317,8 @@
       "frequency": "daily",
       "json_path": "data/vix_index.json",
       "kind": "series",
-      "latest_observation": "2026-08-28",
-      "observations": 9262,
+      "latest_observation": "2026-09-22",
+      "observations": 9279,
       "source_documentation_url": "https://www.cboe.com/tradable_products/vix/",
       "source_id": "FRED_CBOE",
       "source_name": "CBOE Volatility Index",
@@ -343,8 +343,8 @@
       "frequency": "monthly",
       "json_path": "data/china_policy_rate.json",
       "kind": "series",
-      "latest_observation": "2026-06-30",
-      "observations": 366,
+      "latest_observation": "2026-08-31",
+      "observations": 368,
       "source_documentation_url": "https://www.bis.org/statistics/cbpol/cbpol_doc.pdf",
       "source_id": "BIS_CBPOL",
       "source_name": "Central bank policy rates",
@@ -525,8 +525,8 @@
       "frequency": "monthly",
       "json_path": "data/chn_inflation.json",
       "kind": "series",
-      "latest_observation": "2026-06-30",
-      "observations": 390,
+      "latest_observation": "2026-08-31",
+      "observations": 392,
       "source_documentation_url": "https://data.imf.org/Datasets/CPI",
       "source_id": "IMF_CPI",
       "source_name": "Consumer Price Index (CPI)",
@@ -551,8 +551,8 @@
       "frequency": "monthly",
       "json_path": "data/zaf_inflation.json",
       "kind": "series",
-      "latest_observation": "2026-06-30",
-      "observations": 822,
+      "latest_observation": "2026-07-31",
+      "observations": 823,
       "source_documentation_url": "https://data.imf.org/Datasets/CPI",
       "source_id": "IMF_CPI",
       "source_name": "Consumer Price Index (CPI)",
@@ -577,8 +577,8 @@
       "frequency": "monthly",
       "json_path": "data/egy_inflation.json",
       "kind": "series",
-      "latest_observation": "2026-07-31",
-      "observations": 187,
+      "latest_observation": "2026-08-31",
+      "observations": 188,
       "source_documentation_url": "https://data.imf.org/Datasets/CPI",
       "source_id": "IMF_CPI",
       "source_name": "Consumer Price Index (CPI)",
@@ -603,8 +603,8 @@
       "frequency": "monthly",
       "json_path": "data/nga_inflation.json",
       "kind": "series",
-      "latest_observation": "2026-06-30",
-      "observations": 246,
+      "latest_observation": "2026-08-31",
+      "observations": 248,
       "source_documentation_url": "https://data.imf.org/Datasets/CPI",
       "source_id": "IMF_CPI",
       "source_name": "Consumer Price Index (CPI)",
@@ -629,8 +629,8 @@
       "frequency": "monthly",
       "json_path": "data/gha_inflation.json",
       "kind": "series",
-      "latest_observation": "2026-07-31",
-      "observations": 335,
+      "latest_observation": "2026-08-31",
+      "observations": 336,
       "source_documentation_url": "https://data.imf.org/Datasets/CPI",
       "source_id": "IMF_CPI",
       "source_name": "Consumer Price Index (CPI)",
@@ -681,8 +681,8 @@
       "frequency": "monthly",
       "json_path": "data/zaf_policy_rate.json",
       "kind": "series",
-      "latest_observation": "2026-07-31",
-      "observations": 548,
+      "latest_observation": "2026-08-31",
+      "observations": 549,
       "source_documentation_url": "https://www.bis.org/statistics/cbpol/cbpol_doc.pdf",
       "source_id": "BIS_CBPOL",
       "source_name": "Central bank policy rates",
@@ -717,9 +717,9 @@
       "freshness": "current",
       "gaps_over_seven_days": 0,
       "largest_calendar_gap_days": 6,
-      "latest_age_days": 0,
-      "latest_observation": "2026-08-31",
-      "observations": 14203,
+      "latest_age_days": 1,
+      "latest_observation": "2026-09-28",
+      "observations": 14222,
       "requested_history_start": "1900-01-01",
       "source_id": "SARB_DAILY_FX"
     },
@@ -742,9 +742,9 @@
       "freshness": "current",
       "gaps_over_seven_days": 6,
       "largest_calendar_gap_days": 10,
-      "latest_age_days": 0,
-      "latest_observation": "2026-08-31",
-      "observations": 5297,
+      "latest_age_days": 1,
+      "latest_observation": "2026-09-28",
+      "observations": 5317,
       "requested_history_start": "1950-01-01",
       "source_id": "CBE_DAILY_FX"
     },
@@ -761,9 +761,9 @@
       "freshness": "current",
       "gaps_over_seven_days": 0,
       "largest_calendar_gap_days": 5,
-      "latest_age_days": 0,
-      "latest_observation": "2026-08-31",
-      "observations": 430,
+      "latest_age_days": 1,
+      "latest_observation": "2026-09-28",
+      "observations": 450,
       "requested_history_start": "1900-01-01",
       "source_id": "CBN_NFEM_FX"
     },
@@ -891,9 +891,9 @@
       "freshness": "current",
       "gaps_over_seven_days": 3,
       "largest_calendar_gap_days": 51,
-      "latest_age_days": 0,
-      "latest_observation": "2026-08-31",
-      "observations": 7519,
+      "latest_age_days": 1,
+      "latest_observation": "2026-09-28",
+      "observations": 7538,
       "requested_history_start": "1900-01-01",
       "source_id": "BOG_DAILY_FX"
     },
@@ -911,8 +911,8 @@
       "gaps_over_seven_days": 0,
       "largest_calendar_gap_days": 4,
       "latest_age_days": 0,
-      "latest_observation": "2026-08-31",
-      "observations": 486,
+      "latest_observation": "2026-09-29",
+      "observations": 506,
       "requested_history_start": "2024-09-25",
       "source_id": "NBE_DAILY_FX"
     },
@@ -930,8 +930,8 @@
       "gaps_over_seven_days": 43,
       "largest_calendar_gap_days": 11,
       "latest_age_days": 0,
-      "latest_observation": "2026-08-31",
-      "observations": 5022,
+      "latest_observation": "2026-09-29",
+      "observations": 5042,
       "requested_history_start": "2006-01-01",
       "source_id": "CFETS_CNY_PARITY"
     }
@@ -963,22 +963,22 @@
       "sha256": "ad600363a6521ffebd06a63b00ba01c7fd3400d1a59de9c7ca233ddd040d1c21"
     },
     {
-      "bytes": 11837904,
+      "bytes": 11876366,
       "path": "data/africa_fx_daily.csv",
-      "rows": 27935,
-      "sha256": "a698e5a50b9af2cb169b18ce3cc68045883ebabd0b5cc87c3de5a2cd2a30c011"
+      "rows": 28033,
+      "sha256": "d4ef9a67b0ecb000278cca0674925e16cee2e4ee570133d32520ec080f956432"
     },
     {
-      "bytes": 22080199,
+      "bytes": 22136836,
       "path": "data/all_series.csv",
-      "rows": 70344,
-      "sha256": "82ab77a9d8038ae8e26ee0388c9975681ec1e5e5ffe130d4c607a7a039e51708"
+      "rows": 70533,
+      "sha256": "5f8534e451f263b721f4a8192518162f39b62ddb60ef5680feeab37ca59924e5"
     },
     {
       "bytes": 120639,
       "path": "data/brent_oil_price.csv",
       "rows": 415,
-      "sha256": "ed7074c80555fe5718740d6bb76e3c300cdeb9acceb866f68dc07954a093d2ed"
+      "sha256": "13fd5d6acd46ad78b084a2326f963e9ee42b46740bfe2a2681eedd349a5da25a"
     },
     {
       "bytes": 22935,
@@ -987,64 +987,64 @@
       "sha256": "96934903286f1f6d62133b3c1baf60e573d3c35f615c553a2b9d225c4aa776fb"
     },
     {
-      "bytes": 94845,
+      "bytes": 95357,
       "path": "data/china_policy_rate.csv",
-      "rows": 366,
-      "sha256": "cdfe82881ed8c3546ae2d7872278583e0376466f83777a7905339423df9720af"
+      "rows": 368,
+      "sha256": "fe584c983eefe36609d0f33cee57c38c23cdb8623b4903dab1e761e3ed065b4c"
     },
     {
-      "bytes": 17806,
+      "bytes": 17898,
       "path": "data/china_policy_rate.json",
-      "rows": 366,
-      "sha256": "2524f69a23feece4f3686dce008152e77ce33ada4b8d692f9889bf0bbb9860c3"
+      "rows": 368,
+      "sha256": "64a3218be635531a46beadfeeef8926b36b6049b1ad147af725a2b22242c156f"
     },
     {
-      "bytes": 1670555,
+      "bytes": 1677457,
       "path": "data/chn_all_series.csv",
-      "rows": 5778,
-      "sha256": "348a85c7a3c4a63914819ea16b973b5c7b40bb80c97618bc451cf27833aa62ac"
+      "rows": 5802,
+      "sha256": "9bd884c3beb62db45b9695e4c3497019c2577adb23f19b408d3989bd748af644"
     },
     {
-      "bytes": 100023,
+      "bytes": 100535,
       "path": "data/chn_inflation.csv",
-      "rows": 390,
-      "sha256": "b355d0f35a440cb4463fee630b3c1829abc6398728e024a18d20c9256aafec48"
+      "rows": 392,
+      "sha256": "c7ee58e0d23107d10c4c39b1a0a21c09914d14cfc26f1470a979fc1a7dbb0529"
     },
     {
-      "bytes": 21454,
+      "bytes": 21564,
       "path": "data/chn_inflation.json",
-      "rows": 390,
-      "sha256": "000814e3445ef305fce5212d8ae46e02a03a0fbcb37ac92959bae0be5a3c7101"
+      "rows": 392,
+      "sha256": "34648511ece4ede8d64e1ad77f2cad147cc65cb2f7b852996fb4186bce8c2a46"
     },
     {
-      "bytes": 1897964,
+      "bytes": 1905522,
       "path": "data/cny_daily.csv",
-      "rows": 5022,
-      "sha256": "52c4fdf3c232b0e10e81c6f55e7767c70824fb02ed7c24bd6e201fe41ab79717"
+      "rows": 5042,
+      "sha256": "964f18795041e5528de3024571e0188c705c68ab9ba68944ef34515bf34a1053"
     },
     {
-      "bytes": 752702,
+      "bytes": 755700,
       "path": "data/cny_daily.json",
-      "rows": 5022,
-      "sha256": "1559ff9081e8b5d7053fc33914e5f5b29406c7a6b945dae0cf451676c2f36ef5"
+      "rows": 5042,
+      "sha256": "a66697fbaef32770ea94d4a81a9eec6fb0674518c6b1b07cb5ab38363b89ea1d"
     },
     {
-      "bytes": 1476049,
+      "bytes": 1481927,
       "path": "data/cny_fx.csv",
-      "rows": 5022,
-      "sha256": "e71e52e2a03e9374517b2067e876e59bb4a3e926049b1b30a911fe95aeb5a2dd"
+      "rows": 5042,
+      "sha256": "7f9a592e0a6afb586465a17681b1b568de4644bc2b9e70140657e57ec0049985"
     },
     {
-      "bytes": 255524,
+      "bytes": 256542,
       "path": "data/cny_fx.json",
-      "rows": 5022,
-      "sha256": "40f794b7e690b4254b3ecda1f25612a33449b4b391ddcdfc7ca821c9ea737066"
+      "rows": 5042,
+      "sha256": "0a058795dbbd7e4ebcb46d53cd4f77e2004e6804888f2cacc31c1a92206b26af"
     },
     {
       "bytes": 116735,
       "path": "data/cocoa_price.csv",
       "rows": 415,
-      "sha256": "4626b99628a7b1e64e429f611177eb19eb3046e0f2a791c5ebfb8ed02cfbcd5b"
+      "sha256": "464b2eb0e60659b776190f12b40f275faf7e2342fdd963ca2f41c9200593bc46"
     },
     {
       "bytes": 24011,
@@ -1056,7 +1056,7 @@
       "bytes": 128410,
       "path": "data/coffee_arabica_price.csv",
       "rows": 415,
-      "sha256": "4a29b914c28a370c4eaa9094ff40463f6ddfb47c7847ac5f54db6f8ccdf27421"
+      "sha256": "60d29718f5bda0d9576643217510d169c91e636f6b6ba02f4a803bcef3d24708"
     },
     {
       "bytes": 23236,
@@ -1068,7 +1068,7 @@
       "bytes": 119636,
       "path": "data/copper_price.csv",
       "rows": 415,
-      "sha256": "4c2fc3d9b5af5b9ef7c59d74f666f16eec353d9925b27a1bb9d5f46e3121ebf2"
+      "sha256": "acc9310465cc0fd65690486867c663128035f2d9fa0b3b291bfa9eb006421a6a"
     },
     {
       "bytes": 23592,
@@ -1077,82 +1077,82 @@
       "sha256": "c772e16c9c10a42bd3b8fda7194863897838854d91a3691fb06d66080e11c669"
     },
     {
-      "bytes": 2168241,
+      "bytes": 2176439,
       "path": "data/egp_daily.csv",
-      "rows": 5297,
-      "sha256": "22612e28e36fb83630f511170bca09548645eada47d4089ece7efc85a4fbe9c7"
+      "rows": 5317,
+      "sha256": "52528a0b7728020309962eb2ceaf7a9b11315d7c98a57943c43760cbfb1f21ee"
     },
     {
-      "bytes": 817260,
+      "bytes": 820358,
       "path": "data/egp_daily.json",
-      "rows": 5297,
-      "sha256": "5fe71d53247eb97f6684d413b716304825435c24389bb43bc38d78ff2d725066"
+      "rows": 5317,
+      "sha256": "559f9eaeb5bd6368081d9d11bcdf53fc051268178a98acbf3ff4ac8139eff421"
     },
     {
-      "bytes": 1739117,
+      "bytes": 1745695,
       "path": "data/egp_fx.csv",
-      "rows": 5297,
-      "sha256": "66c1c2ea3b320ed0cac0426528a950cd3c2ea51c5799166d560b405cbe723591"
+      "rows": 5317,
+      "sha256": "5c281b26db66627e0b86fd2a5a4677bf417b3b61291eac0b62ed95d346fe47a7"
     },
     {
-      "bytes": 271669,
+      "bytes": 272707,
       "path": "data/egp_fx.json",
-      "rows": 5297,
-      "sha256": "950c55464845c1cec5bd44b7bded14301f2cedf6420e7abc4e48f4a3dd261c09"
+      "rows": 5317,
+      "sha256": "6861449ef38142456404c4aff6e2c562b862d3a712541e4c34b6d0dc9a74c7f2"
     },
     {
-      "bytes": 1787259,
+      "bytes": 1794095,
       "path": "data/egy_all_series.csv",
-      "rows": 5484,
-      "sha256": "aa02094e7718c32fff40298eb608b469720dcd8484861ca6c1a3e24e6175e6b1"
+      "rows": 5505,
+      "sha256": "496312d956ca793ea69ce54b471ef1efa6f59b00af5dac4dc8daa82b1a9ff2d5"
     },
     {
-      "bytes": 48323,
+      "bytes": 48581,
       "path": "data/egy_inflation.csv",
-      "rows": 187,
-      "sha256": "054e9af5ccd179c4c4de1caad17224c04accb6ad9b4d070d4b06f1fb1ce36e12"
+      "rows": 188,
+      "sha256": "1423c207ef642ca9ee4ba687b0351dd07588a68c447593a6ce94dedc9e14f805"
     },
     {
-      "bytes": 10370,
+      "bytes": 10426,
       "path": "data/egy_inflation.json",
-      "rows": 187,
-      "sha256": "341f3fe5d84c840a011e855c154bb0383fe47bf2c82856dbe8abf8eaa1069b4d"
+      "rows": 188,
+      "sha256": "cfd7a7a651bbd7ff928332ac4e8f652ec7420ba989193d5a05dba9054ade3ddd"
     },
     {
-      "bytes": 181443,
+      "bytes": 188900,
       "path": "data/etb_daily.csv",
-      "rows": 486,
-      "sha256": "ba8f86542b4a817c2f6d82ba75677479a4c886ef6827a6525f14fb256552fbaf"
+      "rows": 506,
+      "sha256": "a0af6f2a6f2519ea4398a1d85875dfbe56b31a258d2e0f6c06c25151a86f2909"
     },
     {
-      "bytes": 79137,
+      "bytes": 82394,
       "path": "data/etb_daily.json",
-      "rows": 486,
-      "sha256": "0c18cb780db33fa90056add203a4cdd7b940c96d75674ffeea8dfea80477f6de"
+      "rows": 506,
+      "sha256": "8e38606caa7ce539a767b829644cff821650973b71d9efcd7119adfc0cc489c2"
     },
     {
-      "bytes": 122570,
+      "bytes": 127607,
       "path": "data/etb_fx.csv",
-      "rows": 486,
-      "sha256": "fa66b7828c7f4b9004a6b1998c01d1b99e0bc4b6e2658bcb2e2422848002420d"
+      "rows": 506,
+      "sha256": "f060f120f13b5fb100e5766eedfedbddce3ec1e068d9a384eebcdfb183f3acdb"
     },
     {
-      "bytes": 25677,
+      "bytes": 26734,
       "path": "data/etb_fx.json",
-      "rows": 486,
-      "sha256": "2d69e03eb037d057a5d01dc5624526d7a4386a67f92e9d331db1bad26f1c0531"
+      "rows": 506,
+      "sha256": "f62f269231a2e8571cc4b68a49e14da8ce3e29b963c91a25bff7a7aa14b5a163"
     },
     {
-      "bytes": 199167,
+      "bytes": 204204,
       "path": "data/eth_all_series.csv",
-      "rows": 780,
-      "sha256": "2ea07dc2ea829587bb0a50f198f83a944df76893e655e4d720ed707a98a113af"
+      "rows": 800,
+      "sha256": "b37cf0edddd529b1d93454c9b585ccd40524beab732aed00c0e79c34981eb761"
     },
     {
       "bytes": 76778,
       "path": "data/eth_inflation.csv",
       "rows": 294,
-      "sha256": "fc0d040fb3c544041e40211c2f149ceccd7d64509e61d310822eeab1b136b69b"
+      "sha256": "62ac71a8978a602326405ebb66c17f70d8daa72d14679eb91e82ef94c53150fc"
     },
     {
       "bytes": 16329,
@@ -1161,70 +1161,70 @@
       "sha256": "43f806159b24266b99bf05e50a018fa4b148deb3089e9685446d66bb3c3209d5"
     },
     {
-      "bytes": 867049,
+      "bytes": 868215,
       "path": "data/financial_conditions_index.csv",
-      "rows": 2903,
-      "sha256": "5c5a1ccec7fb7748357af15925a03e23a4b918351ea4ac9ba1e423f1ede105a0"
+      "rows": 2907,
+      "sha256": "9d4c666061a7d0101ea7fa9e6283899006d5a3d2a97b1fa8d3a2bc70317705ac"
     },
     {
-      "bytes": 146926,
+      "bytes": 147100,
       "path": "data/financial_conditions_index.json",
-      "rows": 2903,
-      "sha256": "f9aed5281ea1f5e415bfdda51e759e84ccfd3de38e38ce480cd111de04d0c59f"
+      "rows": 2907,
+      "sha256": "7d6ec999276bfffddbb64ae3e929aea3da5f716be02e7f248f6968af29059b67"
     },
     {
-      "bytes": 13735620,
+      "bytes": 13781640,
       "path": "data/fx_daily.csv",
-      "rows": 32957,
-      "sha256": "e0c075458b20315a01b7671feb22b1ad90d954a6665c58a49e851c3b1392c455"
+      "rows": 33075,
+      "sha256": "5e19e4693c34312770e28f520e130cd943e292e5b4ab3cfe650992592030e0c3"
     },
     {
-      "bytes": 2345134,
+      "bytes": 2351087,
       "path": "data/gha_all_series.csv",
-      "rows": 7854,
-      "sha256": "b3eebe9bdd62c09343a1aab378db4ddbdb2877ee1375d0af226c7614ecbdaab1"
+      "rows": 7874,
+      "sha256": "e03521dd8e7e7273e739111664dd908412f8542ca7fad92ea0b063b7a6d2a7ec"
     },
     {
-      "bytes": 86491,
+      "bytes": 86748,
       "path": "data/gha_inflation.csv",
-      "rows": 335,
-      "sha256": "bdb41e739e07abc9dd29913f5ba9c5d127a56ab3a966c00d542c50376ce69985"
+      "rows": 336,
+      "sha256": "e66d802b38eab62b15269e286342888bc187416383d5fee07c4c23b75dafa65a"
     },
     {
-      "bytes": 18642,
+      "bytes": 18697,
       "path": "data/gha_inflation.json",
-      "rows": 335,
-      "sha256": "edbac2f763a78adec5c696e34438a45dfefc616c8f576ed283611541274abaf9"
+      "rows": 336,
+      "sha256": "9ab4ac334b79a3259f4f045a4f02ab3d76c54d79ae5509aa174a9a3d521e54e1"
     },
     {
-      "bytes": 2657398,
+      "bytes": 2664101,
       "path": "data/ghs_daily.csv",
-      "rows": 7519,
-      "sha256": "1e190537b35ef6e5e5ecf8e71b4f5154400465a9f37f79e734e91e0ba6cd1b3b"
+      "rows": 7538,
+      "sha256": "b9deae41a1f86ef10da463580911b9bddfd0983e481bae1cbbc3bbdb9ddf6fb0"
     },
     {
-      "bytes": 1123276,
+      "bytes": 1126103,
       "path": "data/ghs_daily.json",
-      "rows": 7519,
-      "sha256": "35be493e21fb381761393e1c0c4425e533c006464901c2f8b6cf7a4e88d82c95"
+      "rows": 7538,
+      "sha256": "2e9c9c37a08924fc82a0bd9f9f49cae4430d2d4410422a27feee6c2a4058ea30"
     },
     {
-      "bytes": 2258824,
+      "bytes": 2264520,
       "path": "data/ghs_fx.csv",
-      "rows": 7519,
-      "sha256": "2a6ee9ae1851d73ff313287106e050dc618cebff4fba1cc12de3e702cfb787f8"
+      "rows": 7538,
+      "sha256": "9158db78f7abeaefba096589809308b2e81da38050437d58a207ad77ed52f0d7"
     },
     {
-      "bytes": 386414,
+      "bytes": 387379,
       "path": "data/ghs_fx.json",
-      "rows": 7519,
-      "sha256": "c5e6ab26e9474fe87542783847a5094ea018423cb95202107f5f920169c08d94"
+      "rows": 7538,
+      "sha256": "0cbac06f68b160e3f3185a0492cdccfb22f0e932ef93eae574cb1fa6b09ac497"
     },
     {
       "bytes": 122790,
       "path": "data/metals_price_index.csv",
       "rows": 415,
-      "sha256": "ada524c96310e2184925157c8d97c932975c75e78832376e6cd7afa8a9b85ad9"
+      "sha256": "a1c495e3630f6d0b897f95ddcdba992b88d935104fb3a97bbfcc236d51a4cc0b"
     },
     {
       "bytes": 23426,
@@ -1233,130 +1233,130 @@
       "sha256": "ef3fce19b3be62c4d06646aed27330f57f2eeb4718cfa14734d8527c1c369fc0"
     },
     {
-      "bytes": 175722,
+      "bytes": 181438,
       "path": "data/nga_all_series.csv",
-      "rows": 676,
-      "sha256": "d8f117624dd4e5c150f5cde0374cc803fd1f97e0dc6e63beb3ccfaa36fde4cea"
+      "rows": 698,
+      "sha256": "6bf3486485fc81fbfffec3e7cae3ee8d1e4fa5b1b86744731efb990116104035"
     },
     {
-      "bytes": 64045,
+      "bytes": 64564,
       "path": "data/nga_inflation.csv",
-      "rows": 246,
-      "sha256": "1fd754cb3d720acbb6ab60c8903db156164b52e2b8db3bcfa6ca3c8b63cbfe8e"
+      "rows": 248,
+      "sha256": "5e359a9c105bdf54e0b20bf86108d062af2e2c0beeeb9c80c906b2fa27e2b541"
     },
     {
-      "bytes": 13682,
+      "bytes": 13793,
       "path": "data/nga_inflation.json",
-      "rows": 246,
-      "sha256": "aa42a43e47a3ea8c2fb5912046f8b823217abb7ef1750802aaea4f24506c8160"
+      "rows": 248,
+      "sha256": "471ae6795084c71fc6b74c66407540a28e90e41b662dbcd2ea79ad45bd8e1383"
     },
     {
-      "bytes": 154065,
+      "bytes": 161222,
       "path": "data/ngn_daily.csv",
-      "rows": 430,
-      "sha256": "e21955e78d8374d9a661d139425c273687d0e2ad46ecf159e096420c8dab05fb"
+      "rows": 450,
+      "sha256": "2971b3b8ab8573db0ad60a735ecc0cc4acc2f8ca528bb46a6987a8adeeaec8d9"
     },
     {
-      "bytes": 64379,
+      "bytes": 67376,
       "path": "data/ngn_daily.json",
-      "rows": 430,
-      "sha256": "e3052118ed9bbd3fd2fa8a16d50428ea66e86f369bef4d6d3eccdc4403907d98"
+      "rows": 450,
+      "sha256": "89cd60a9202b568abdabf57196f97bd5a3fda9b91fd4b4276ca29d9aba61c52b"
     },
     {
-      "bytes": 111858,
+      "bytes": 117055,
       "path": "data/ngn_fx.csv",
-      "rows": 430,
-      "sha256": "911fb374ee49c9503908e846b1173475d09d5d1a9d97b6f412781e82d0498f45"
+      "rows": 450,
+      "sha256": "931f29db657ba25740f4758f9b710d4609601b71196a3e8b92b5d967afde2268"
     },
     {
-      "bytes": 23099,
+      "bytes": 24176,
       "path": "data/ngn_fx.json",
-      "rows": 430,
-      "sha256": "0f610bee0749c621941887ca2ded8d70400d18bb1a473aecca0cbfc9c8d54f4b"
+      "rows": 450,
+      "sha256": "4004a05bc3ab802454936f5758597d9d1422c8e2bd41d551f1da0d3c38ca244f"
     },
     {
       "bytes": 2694,
       "path": "data/sources.csv",
       "rows": 6,
-      "sha256": "4ab24fe80fb0df15efa97040a04d9a71e0f45ac59453655950914cd1cf0ca756"
+      "sha256": "53c585a6cd27b17fdc92c2ea5f813374ab6818c046ed615b8499b71d27ed8b8e"
     },
     {
       "bytes": 4503,
       "path": "data/sources.json",
       "rows": 6,
-      "sha256": "db521e052e54ead09d7497ac489f31d2a9651a4537869cc329204f0aa7e20fed"
+      "sha256": "d8ec80257e900345d43e8c80e98353923ebd38a7375437a1e5a13db2e07fca54"
     },
     {
-      "bytes": 4457957,
+      "bytes": 4464702,
       "path": "data/us_2y_yield.csv",
-      "rows": 12558,
-      "sha256": "ad588413a5313f010849fbd2231e39e1a79432c139fc0d21139f73ae93832917"
+      "rows": 12577,
+      "sha256": "c044fce53fd83ae4ca07d45bd72be241af56b8e99a90dcfef75ce1814e692acc"
     },
     {
-      "bytes": 615030,
+      "bytes": 615961,
       "path": "data/us_2y_yield.json",
-      "rows": 12558,
-      "sha256": "ae3cf8dacb7b6759453a5b03dd3a0103bebc42f59c2c2705c7d6c6b11d832e57"
+      "rows": 12577,
+      "sha256": "3975fa4e27e6c89739020d14983f832baee0498f761ed2b5af5266397b7eaaf6"
     },
     {
-      "bytes": 1779018,
+      "bytes": 1785550,
       "path": "data/us_dollar_index.csv",
-      "rows": 5179,
-      "sha256": "4c5c10766e6b2c5043b9e526bdd067ec59821cc0ee375fd9fc0506c65249a211"
+      "rows": 5198,
+      "sha256": "44fd10592afa59a697722c027f9a067ed02cb9dda9c56f4c1b74dfdb438424eb"
     },
     {
-      "bytes": 271750,
+      "bytes": 272753,
       "path": "data/us_dollar_index.json",
-      "rows": 5179,
-      "sha256": "bb424c17b03fb8009da97497bd6c7c54ee5381a277eac890700ca6f5ab9bafd2"
+      "rows": 5198,
+      "sha256": "51aff04f53fbac161f58087a2bd207f335f88e8047f623a6a846980a5a95c45e"
     },
     {
-      "bytes": 293993,
+      "bytes": 294305,
       "path": "data/us_inflation.csv",
-      "rows": 942,
-      "sha256": "00204847847091782d15dd2fda2fffa778e9a88b7ec1cb7bc74ce6bdfe3fd315"
+      "rows": 943,
+      "sha256": "7bee24b4e53230529cf2f9b0ca87fd3e6e32e00aa72e98b6e0f74d6b8a9428e8"
     },
     {
-      "bytes": 51720,
+      "bytes": 51775,
       "path": "data/us_inflation.json",
-      "rows": 942,
-      "sha256": "e9f61df56a05a7549640b83e8639409295de18d6f72130ab01066be2942235a2"
+      "rows": 943,
+      "sha256": "fefd3d9494d165c7b126bac20559e224db70e0ab45c35ad8d315ac7c117c8bd1"
     },
     {
-      "bytes": 228321,
+      "bytes": 228586,
       "path": "data/us_policy_rate.csv",
-      "rows": 865,
-      "sha256": "c358181cf7d3f157a541e120bec66e903afbb3488a0bf96f2ca13993a9d16ef2"
+      "rows": 866,
+      "sha256": "8757dbebe5daa7669f66d69e8b11fb6be80e2c70c94ca5c9b0d4ba63e19d9582"
     },
     {
-      "bytes": 42167,
+      "bytes": 42217,
       "path": "data/us_policy_rate.json",
-      "rows": 865,
-      "sha256": "fb13a26dfb7cc4835d6e6ffdf70055763cec4fd1b027daa00367698ad84da3a4"
+      "rows": 866,
+      "sha256": "3dfd14fb4f5fc86ae534706220239a0c73565bc682abc0e56c65b08c7e0b855c"
     },
     {
-      "bytes": 9662090,
+      "bytes": 9680846,
       "path": "data/usa_all_series.csv",
-      "rows": 31709,
-      "sha256": "025932e9e7a66916a950a54926a8a1906be0b7d1bb0344becf799679e6bd3cf0"
+      "rows": 31770,
+      "sha256": "15ae6a83275f6ec3444902a61a19322f9f15bf9dccff755a4b407043fc066832"
     },
     {
-      "bytes": 2036657,
+      "bytes": 2040393,
       "path": "data/vix_index.csv",
-      "rows": 9262,
-      "sha256": "a254445dff311c84fc576af371a695b606036395f3f641b8d63177493e58c680"
+      "rows": 9279,
+      "sha256": "d5964ebd866e53041da394338149fca6ff66215cc2ff3fd02910cc8672d2ed8a"
     },
     {
-      "bytes": 461938,
+      "bytes": 462784,
       "path": "data/vix_index.json",
-      "rows": 9262,
-      "sha256": "51889de055de5b2c6a5931b2c54ac344328b8939287950b38218cbaf7a36dcdd"
+      "rows": 9279,
+      "sha256": "f3727101d47140d7f8ea98a8923297b7d7ad6443d1aaad85eb7471190c163c0f"
     },
     {
       "bytes": 116216,
       "path": "data/wheat_price.csv",
       "rows": 415,
-      "sha256": "944f07784e087ccb67ffea8d9a0001aaec7c5c43b942331ed7c7241ba2c35ef9"
+      "sha256": "ef9214afb030e753025c07f6929624bc9fbc299b45f2bb6dd2c2fddee101755d"
     },
     {
       "bytes": 23492,
@@ -1365,58 +1365,58 @@
       "sha256": "a8b61e141cd835865a00a7ed27652a439947f79d22b26823f4bfa38cda96a5ab"
     },
     {
-      "bytes": 5518018,
+      "bytes": 5525455,
       "path": "data/zaf_all_series.csv",
-      "rows": 15573,
-      "sha256": "ac366061b09d1eff5e15d39fccd9e4fb9aa6e400a0ee0db8cd93ccdb0c3d960d"
+      "rows": 15594,
+      "sha256": "a1a67aa17216688f7c956c3ef74599f3b6a7988bd18943c36df0bfccc39b5597"
     },
     {
-      "bytes": 217304,
+      "bytes": 217568,
       "path": "data/zaf_inflation.csv",
-      "rows": 822,
-      "sha256": "36d6a26fd2581653d12766a0707a8fceaac9b47f3d1db00bdddf37fe153c50c9"
+      "rows": 823,
+      "sha256": "485b00d0434b948c441eef2c9100f683e8b04c346eb614ef5beffae3e37cd2c5"
     },
     {
-      "bytes": 45327,
+      "bytes": 45382,
       "path": "data/zaf_inflation.json",
-      "rows": 822,
-      "sha256": "cf3cdc0f27aa9c4eec090e375cc537dc2da5d5550072e1aa8d3652fc8135717e"
+      "rows": 823,
+      "sha256": "29033bb6c569c578a20922e1eea14237bca59b2b6fdde67cedac2d58abf159a2"
     },
     {
-      "bytes": 143115,
+      "bytes": 143374,
       "path": "data/zaf_policy_rate.csv",
-      "rows": 548,
-      "sha256": "eefffa597f5498760d1351ecd98647185026d216619d004974275d5611d3b488"
+      "rows": 549,
+      "sha256": "69670238edb4470977442251882c9f6660365bdc3947b4e92c16406d0a2e016d"
     },
     {
-      "bytes": 26212,
+      "bytes": 26258,
       "path": "data/zaf_policy_rate.json",
-      "rows": 548,
-      "sha256": "f480b8b15a4f7d058a4930f1e914722e52cadac1c4f8d91ba432fa72c168dac5"
+      "rows": 549,
+      "sha256": "4b6c0b44724e18136998e846790098483c5b4ba41ce5e64b391484965d815172"
     },
     {
-      "bytes": 6677749,
+      "bytes": 6686696,
       "path": "data/zar_daily.csv",
-      "rows": 14203,
-      "sha256": "cb780cd707e65eb9754a3cb918d6543517d58cf38808b41e28cad557ac08aeaf"
+      "rows": 14222,
+      "sha256": "d6acca5ed64cea1754ac38146ada87892ce310f3d2fdf7719d81028b9590d594"
     },
     {
-      "bytes": 2231964,
+      "bytes": 2234964,
       "path": "data/zar_daily.json",
-      "rows": 14203,
-      "sha256": "f74e9d8ef8c7cdfd9fda941ed23664244cbb53e9a14083aaea6dd66b2c66521b"
+      "rows": 14222,
+      "sha256": "f57af58029702318479494a8e5f3fd739d1ef28138f2d0df70253502c04bcef6"
     },
     {
-      "bytes": 5157961,
+      "bytes": 5164875,
       "path": "data/zar_fx.csv",
-      "rows": 14203,
-      "sha256": "6bd4185e6f7345e6955f0743d7dd1b91a435d304e8f233741f1d099ec996a2be"
+      "rows": 14222,
+      "sha256": "9d4cc843773d0cbb31ceb8ef601236082015ac7b774da4a089ca4b03c03ccb65"
     },
     {
-      "bytes": 726446,
+      "bytes": 727432,
       "path": "data/zar_fx.json",
-      "rows": 14203,
-      "sha256": "4b8549985accd431a78f00da0f29311160eb046d3633c62fefd5284d77c05014"
+      "rows": 14222,
+      "sha256": "7468855130e381ef0e2b7df615eaf0e6da5bce5fc7e404a429c36916546e9baa"
     },
     {
       "bytes": 2026,
@@ -1432,10 +1432,10 @@
     }
   ],
   "frequency": "daily",
-  "generated_at": "2026-09-01T00:42:26.467300+00:00",
+  "generated_at": "2026-09-29T02:51:03.984254+00:00",
   "methodology": "All available observations from each allowlisted official or primary series through the stated cutoff. Daily, weekly and monthly frequencies remain distinct. Missing dates are not filled. US inflation is the documented 12-month percentage change derived from the retained BLS CPI level series.",
   "missing_value_rule": "never_forward_fill",
-  "observation_count": 32957,
+  "observation_count": 33075,
   "quote_convention": "LCU_per_USD",
   "quote_currency": "USD",
   "rights_notice": "Source data rights remain with the named providers. Retain attribution and review provider terms before redistributing the data.",
@@ -1463,5 +1463,5 @@
       "tab_id": "agriculture"
     }
   ],
-  "total_series_observation_count": 70344
+  "total_series_observation_count": 70533
 }
